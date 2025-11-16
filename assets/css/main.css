@@ -185,7 +185,7 @@ a:hover {
 
 .blog-header {
   background-color: var(--color-bg);
-  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
   text-align: center;
   border-bottom: 2px solid var(--color-border-light);
   position: relative;
@@ -606,15 +606,17 @@ a:hover {
 }
 
 /* ============================================
-   FOOTER - SIMPLE GOLD LINK ON BLACK
+   FOOTER - SIMPLE LINK
    ============================================ */
 
+/* Default footer - white background for index page */
 .blog-footer {
-  background-color: #000000;
+  background-color: var(--color-bg);
   padding: var(--spacing-2xl) var(--spacing-lg);
   text-align: center;
   width: 100%;
   margin-top: var(--spacing-3xl);
+  border-top: 1px solid var(--color-border-light);
 }
 
 .blog-footer p {
@@ -630,8 +632,18 @@ a:hover {
 }
 
 .blog-footer a:hover {
-  color: #D4AF37;
+  color: var(--color-primary);
   opacity: 0.8;
+}
+
+/* Footer on article pages - black background */
+body.article-page .blog-footer {
+  background-color: #000000;
+  border-top: none;
+}
+
+body.article-page .blog-footer a:hover {
+  color: #D4AF37;
 }
 
 /* ============================================
