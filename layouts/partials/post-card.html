@@ -1,0 +1,46 @@
+<!-- Reusable Post Card Component -->
+<article class="post-card" data-category="{{ .Params.category }}">
+    {{ if .Params.heroImage }}
+    <a href="{{ .Permalink }}">
+        <img
+            src="{{ .Params.heroImage }}"
+            alt="{{ .Params.heroImageAlt | default .Title }}"
+            class="post-card-image"
+            loading="lazy"
+        >
+    </a>
+    {{ end }}
+
+    <div class="post-card-content">
+        {{ if .Params.category }}
+        <span class="post-card-category">{{ .Params.category }}</span>
+        {{ end }}
+
+        <h2 class="post-card-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+
+        <p class="post-card-excerpt">
+            {{ .Params.description | truncate 150 }}
+        </p>
+
+        <div class="post-card-meta">
+            <div class="post-card-date">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+            </div>
+            {{ if .Params.readTime }}
+            <span class="post-card-readtime">{{ .Params.readTime }}</span>
+            {{ end }}
+        </div>
+
+        {{ if .Params.tags }}
+        <div class="post-card-tags">
+            {{ range first 3 .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</article>

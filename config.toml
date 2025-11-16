@@ -1,0 +1,71 @@
+# The Lightroom Studio Blog - Hugo Configuration
+# https://gohugo.io/getting-started/configuration/
+
+baseURL = "https://blog.thelightroomstudios.com/"
+languageCode = "en-us"
+title = "The Lightroom Studio Blog"
+theme = "" # Add theme name if using a Hugo theme
+
+# Content directory
+contentDir = "content"
+publishDir = "public"  # Output directory for built site
+
+# Pagination
+paginate = 12  # Number of posts per page
+
+# Taxonomy
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Permalinks
+[permalinks]
+  posts = "/posts/:filename/"
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow HTML in markdown
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    tabWidth = 2
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+# Site parameters
+[params]
+  description = "Professional photography blog covering techniques, business insights, and industry trends."
+  author = "The Lightroom Studio"
+
+  # Social media (optional)
+  # twitter = "@yourusername"
+  # instagram = "@yourusername"
+
+  # Analytics (optional)
+  # googleAnalytics = "UA-XXXXXXXXX-X"
+
+  # Images
+  ogImage = "/assets/images/og-default.jpg"
+  logo = "/assets/images/logo.png"
+
+# Menu configuration (if needed)
+# [[menu.main]]
+#   name = "Home"
+#   url = "/"
+#   weight = 1
+#
+# [[menu.main]]
+#   name = "About"
+#   url = "/about/"
+#   weight = 2
+
+# Sitemap configuration
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
