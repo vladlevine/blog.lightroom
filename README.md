@@ -68,6 +68,7 @@ blog.lightroom/
 │       └── example-blog-post.md
 ├── public/                   # Generated site (git ignored)
 ├── config.toml               # Hugo configuration
+├── netlify.toml              # Netlify deployment configuration
 ├── index.html                # Main catalog page
 ├── BLOG_WRITING_GUIDE.md     # Complete writing workflow guide
 └── README.md                 # This file
@@ -107,16 +108,19 @@ See `BLOG_WRITING_GUIDE.md` for:
 
 ### Netlify Deployment (Recommended)
 
+**Good news:** The repository already includes `netlify.toml` with all build settings configured!
+
 1. **Connect repository to Netlify:**
    - Log in to [Netlify](https://netlify.com)
    - Click "Add new site" > "Import an existing project"
    - Connect to GitHub and select `blog.lightroom` repository
-   - Branch: `main` (or your production branch)
+   - Branch: `main` (or your production branch - e.g., `claude/check-repo-access-01UySTBnCB8m2euWY8exrgtX`)
 
-2. **Build settings:**
-   - Build command: `hugo`
-   - Publish directory: `public`
-   - Environment variable: `HUGO_VERSION` = `0.120.0` (or latest)
+2. **Build settings (auto-detected from netlify.toml):**
+   - Build command: `hugo --minify` (configured)
+   - Publish directory: `public` (configured)
+   - Hugo version: `0.121.1` (configured)
+   - **No manual configuration needed!** Netlify reads from `netlify.toml`
 
 3. **Domain setup:**
    - In Netlify: Settings > Domain management > Add custom domain
@@ -128,6 +132,8 @@ See `BLOG_WRITING_GUIDE.md` for:
    - Name: `blog`
    - Value: `your-site.netlify.app` (provided by Netlify)
    - TTL: `3600` (or automatic)
+
+**That's it!** Every push to your branch will automatically trigger a new build and deployment.
 
 ### Alternative: GitHub Pages
 
