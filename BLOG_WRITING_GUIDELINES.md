@@ -131,6 +131,10 @@ This document outlines the complete process for creating high-quality, SEO-optim
 - [ ] Compress images for fast loading
 - [ ] Use lazy loading (loading="lazy") except hero image
 - [ ] Include captions/descriptions where helpful
+- [ ] **Image credits:** Extract author name from filename and include proper attribution (e.g., "Image by [Author] from [Source]")
+  - Format: Check filename for author information (e.g., "Image_by_kconcha_from_Pixabay")
+  - Add credit in caption using format: "Image by [Author] from [Source]"
+  - Place after image caption text, separated by " | " if both present
 
 ### Content Enhancements
 - [ ] Add breadcrumb navigation
