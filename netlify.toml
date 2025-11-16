@@ -1,43 +1,14 @@
-# Netlify Configuration for The Lightroom Studio Blog
-# https://docs.netlify.com/configure-builds/file-based-configuration/
+# Netlify Configuration for The Lightroom Studio Blog (Static HTML)
+# No build process needed - serving static HTML files directly
 
 [build]
-  # Build command to generate the static site
-  command = "hugo --minify"
+  # No build command needed for static HTML
+  publish = "."
 
-  # Directory that Hugo outputs the built site to
-  publish = "public"
+  # Base directory is root
+  base = ""
 
-  # Base directory (if your Hugo site is in a subdirectory, specify it here)
-  # base = ""
-
-[build.environment]
-  # Specify Hugo version for Netlify to install
-  # Check latest version at: https://github.com/gohugoio/hugo/releases
-  HUGO_VERSION = "0.121.1"
-
-  # Use extended version of Hugo (includes SCSS/SASS support)
-  HUGO_ENV = "production"
-
-[context.production]
-  # Production-specific settings
-  command = "hugo --minify"
-
-[context.deploy-preview]
-  # Settings for deploy previews (when you open a PR)
-  command = "hugo --minify --buildFuture"
-
-[context.branch-deploy]
-  # Settings for branch deploys
-  command = "hugo --minify"
-
-# Redirect rules (optional - add custom redirects here if needed)
-# [[redirects]]
-#   from = "/old-path"
-#   to = "/new-path"
-#   status = 301
-
-# Custom headers (optional - for security, caching, etc.)
+# Custom headers for security and performance
 [[headers]]
   for = "/*"
   [headers.values]
@@ -60,3 +31,9 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect rules (optional)
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301
