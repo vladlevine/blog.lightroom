@@ -5,6 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Set current date in masthead
+    setCurrentDate();
+
     // Smooth Scroll for Anchor Links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -39,6 +42,34 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeSearch();
     }
 });
+
+/**
+ * Sets the current date in the masthead
+ */
+function setCurrentDate() {
+    const dateElement = document.getElementById('current-date');
+    if (!dateElement) return;
+
+    const now = new Date();
+    const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+    const months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+
+    const dayName = days[now.getDay()];
+    const monthName = months[now.getMonth()];
+    const day = now.getDate();
+    const year = now.getFullYear();
+
+    // Calculate volume number (years since 2024)
+    const volumeNumber = year - 2024 + 1;
+
+    // Calculate issue number (days in current year)
+    const startOfYear = new Date(year, 0, 1);
+    const diffInMs = now - startOfYear;
+    const issueNumber = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
+
+    const formattedDate = `${dayName}, ${monthName} ${day}, ${year} - VOL. ${volumeNumber} NO. ${issueNumber}`;
+    dateElement.textContent = formattedDate;
+}
 
 /**
  * Creates a reading progress bar at the top of blog posts
