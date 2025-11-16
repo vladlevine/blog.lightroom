@@ -250,7 +250,7 @@ body.wsj-layout {
 
 .story-text {
   text-align: left;
-  max-width: 650px;
+  max-width: 845px;
 }
 
 .story-text p {
@@ -401,7 +401,7 @@ body.wsj-article-page {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--color-text);
-  max-width: 720px;
+  max-width: 936px;
   text-align: left;
 }
 
