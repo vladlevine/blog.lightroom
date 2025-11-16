@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>{{ .Site.Title }} | Photography Insights & Tutorials</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="photography blog, photography tutorials, photography business, professional photography, lighting techniques">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:url" content="{{ .Site.BaseURL }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ .Site.BaseURL }}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- Header -->
+    {{ partial "header.html" . }}
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Category Filter -->
+        <nav class="category-filter" aria-label="Filter posts by category">
+            <button class="category-btn active" data-category="all">All Posts</button>
+            <button class="category-btn" data-category="Photography">Photography</button>
+            <button class="category-btn" data-category="Technology">Technology</button>
+            <button class="category-btn" data-category="Business">Business</button>
+            <button class="category-btn" data-category="Tutorial">Tutorial</button>
+        </nav>
+
+        <!-- Posts Grid -->
+        <div class="posts-grid" id="postsGrid">
+
+            {{ range where .Site.RegularPages "Section" "posts" }}
+                {{ partial "post-card.html" . }}
+            {{ end }}
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    {{ partial "footer.html" . }}
+
+    <!-- JavaScript for Filtering -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+</html>
