@@ -158,6 +158,32 @@ a:hover {
 }
 
 /* ============================================
+   TOP NAVIGATION - THIN GREY STRIPE
+   ============================================ */
+
+.top-nav {
+  background-color: #F3F4F6;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+.top-nav a {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.025em;
+  border-bottom: none;
+  transition: color var(--transition-fast);
+}
+
+.top-nav a:hover {
+  color: var(--color-accent);
+  border-bottom: none;
+}
+
+/* ============================================
    HEADER - MINIMAL & ELEGANT
    ============================================ */
 
@@ -574,11 +600,11 @@ a:hover {
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 90%;
+    max-width: 95%;
   }
 
   .article-container {
-    max-width: 85%;
+    max-width: 92%;
   }
 }
 
