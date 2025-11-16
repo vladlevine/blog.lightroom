@@ -570,6 +570,12 @@ body.wsj-layout {
   object-fit: cover;
   flex-shrink: 0;
   border: 1px solid var(--color-border-light);
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.article-list-link:hover .article-list-thumb {
+  filter: grayscale(0%);
 }
 
 .article-list-content {
