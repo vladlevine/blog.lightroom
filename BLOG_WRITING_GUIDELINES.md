@@ -162,11 +162,9 @@ This document outlines the complete process for creating high-quality, SEO-optim
 - Multiple contact options
 - Should be the strongest, most conversion-focused
 
-### Newsletter Signup
-- Place after final CTA
-- Email capture form
-- Promise value (tips, insights, exclusive offers)
-- Privacy assurance
+### ~~Newsletter Signup~~
+- **REMOVED** - Does not fit WSJ newspaper aesthetic
+- Focus on direct CTAs for services instead
 
 ### Related Articles
 - 3-4 related blog posts
@@ -175,11 +173,14 @@ This document outlines the complete process for creating high-quality, SEO-optim
 - Placed near bottom
 
 ### CTA Best Practices
-- No more than 3-4 CTAs per article
-- Space them out naturally
+- No more than 3 CTAs per article (early, mid, final)
+- Match classic WSJ newspaper design (borders, no gradients)
+- Space them out naturally in content
 - Each CTA should feel relevant to surrounding content
-- Use action-oriented language
+- Use professional, understated language (not salesy)
 - Provide clear value proposition
+- NO modern web design elements (gradients, rounded corners, bright colors, emojis)
+- Use classic typography and simple borders only
 
 ---
 
@@ -278,44 +279,76 @@ This document outlines the complete process for creating high-quality, SEO-optim
 4. Opening Hook (2-3 paragraphs)
 5. Table of Contents
 6. Main Content (with H2/H3 sections)
-   - Early CTA (after first major section)
+   - Early CTA (after first major section) - simple bordered box
    - Supporting images
-   - Mid-Article CTA (middle of content)
+   - Mid-Article CTA (middle of content) - simple bordered box
 7. FAQ Section (if applicable)
 8. Conclusion/Summary
-9. Final CTA (prominent, conversion-focused)
-10. Newsletter Signup
-11. Related Articles
-12. Back to Blog Link
-
+9. Final CTA (double border box - traditional newspaper ad style)
+10. Related Articles (newspaper grid with vertical dividers)
+11. Back to Blog Link
 ```
 
-### CTA Template Styles
+**Design Philosophy:**
+All elements must match the Wall Street Journal newspaper aesthetic:
+- Classic serif and sans-serif typography
+- Black borders and dividers
+- Off-white newspaper background
+- No modern web design elements
+- Professional and understated
 
-**Early Article (Info Box):**
+### CTA Template Styles (WSJ Newspaper Style)
+
+**All CTAs should match the classic newspaper aesthetic:**
+- Simple black borders (no gradients or modern colors)
+- Off-white backgrounds matching the newspaper
+- Classic typography (serif headlines, sans-serif labels)
+- Understated and professional
+- No rounded corners, no shadows, no emojis
+
+**Early/Mid-Article CTA (Simple Box):**
 ```html
-<div style="background-color: #F0F7FF; border-left: 4px solid var(--color-accent); padding: 1.5rem; margin: 2rem 0;">
-    <p><strong>Need [service]?</strong> Brief description. <a href="#">Link text →</a></p>
+<div style="border: 2px solid var(--color-border); padding: 1.25rem; margin: 2rem 0; background-color: var(--color-bg);">
+    <p style="margin: 0; font-family: var(--font-sans); font-size: 0.8125rem; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">SECTION LABEL</p>
+    <p style="margin: 0.75rem 0 0 0; font-family: var(--font-body); font-size: 0.9375rem; text-align: center;">Brief description and value proposition. <a href="#" style="color: var(--color-heading); text-decoration: underline;">Link text</a></p>
 </div>
 ```
 
-**Mid-Article (Action Box):**
+**Final CTA (Double Border - Traditional Ad Style):**
 ```html
-<div style="background-color: #FFF7ED; border-left: 4px solid #F59E0B; padding: 1.5rem; margin: 2rem 0;">
-    <p><strong>Ready to [action]?</strong> Value proposition. <a href="#">CTA text →</a></p>
+<div class="divider-thick" style="margin: 2rem 0;"></div>
+
+<div style="border: 3px double var(--color-border); padding: 2rem; margin: 2rem 0; text-align: center; background-color: var(--color-bg);">
+    <h3 style="font-family: var(--font-headline); font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-heading);">Service Headline</h3>
+    <div class="divider-thin" style="margin: 1rem auto; max-width: 200px;"></div>
+    <p style="font-family: var(--font-body); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6;">Value proposition and description.</p>
+    <p style="font-family: var(--font-sans); font-size: 0.875rem; margin-bottom: 0.5rem;">
+        <a href="#" style="color: var(--color-heading); text-decoration: underline; font-weight: 600;">Primary Action</a> |
+        <a href="#" style="color: var(--color-heading); text-decoration: underline; font-weight: 600;">Secondary Action</a>
+    </p>
+    <p style="font-family: var(--font-sans); font-size: 0.75rem; color: #666; margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">The Lightroom Studio · Professional Photography</p>
 </div>
+
+<div class="divider-thick" style="margin: 2rem 0;"></div>
 ```
 
-**Final CTA (Conversion Focus):**
+**Related Articles (Newspaper Grid Style):**
 ```html
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem 2rem; border-radius: 8px; text-align: center;">
-    <h3>Headline</h3>
-    <p>Subheadline/Value Prop</p>
-    <div>
-        <a href="#">Primary CTA</a>
-        <a href="#">Secondary CTA</a>
+<div style="margin: 2rem 0;">
+    <h3 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; color: var(--color-section-blue); text-align: center; font-weight: 700;">Related Reading</h3>
+    <div class="divider-thin" style="margin-bottom: 1.5rem;"></div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0;">
+        <div style="border-right: 1px solid var(--color-border-light); padding: 1rem 1.25rem;">
+            <h4 style="font-family: var(--font-headline); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.3;">
+                <a href="#" style="color: var(--color-heading); text-decoration: none;">Article Title</a>
+            </h4>
+            <p style="font-size: 0.8125rem; color: var(--color-text); line-height: 1.5; margin: 0;">Brief description.</p>
+        </div>
+        <!-- Repeat for more articles -->
     </div>
-    <p>Contact options</p>
+
+    <div class="divider-thin" style="margin-top: 1.5rem;"></div>
 </div>
 ```
 
@@ -352,6 +385,8 @@ This document outlines the complete process for creating high-quality, SEO-optim
 ✓ Include personal experiences/examples
 ✓ Use specific numbers and data
 ✓ Address reader directly ("you")
+✓ Match WSJ newspaper aesthetic in all design elements
+✓ Use classic borders and dividers
 
 ### DON'T:
 ✗ Use passive voice excessively
@@ -362,6 +397,9 @@ This document outlines the complete process for creating high-quality, SEO-optim
 ✗ Be overly formal or stiff
 ✗ Keyword stuff
 ✗ Write generic content
+✗ Use gradients, rounded corners, or modern web design
+✗ Use emojis in CTAs or promotional content
+✗ Use bright colors or flashy design elements
 
 ---
 
