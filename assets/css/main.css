@@ -278,6 +278,16 @@ body.wsj-layout {
   padding-top: var(--spacing-sm);
 }
 
+.continued a {
+  color: var(--color-heading);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.continued a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================
    RIGHT COLUMN: Side Stories
    ============================================ */
