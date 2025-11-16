@@ -90,17 +90,20 @@ body.wsj-layout {
 
 .masthead-title {
   font-family: var(--font-masthead);
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 900;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   margin: var(--spacing-md) 0;
-  line-height: 1;
+  line-height: 0.9;
+  transform: scaleY(1.4);
+  transform-origin: center;
 }
 
 .masthead-title a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  display: inline-block;
 }
 
 .masthead-title a:hover {
@@ -663,7 +666,8 @@ body.wsj-article-page {
   }
 
   .masthead-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    transform: scaleY(1.3);
   }
 }
 
@@ -673,8 +677,9 @@ body.wsj-article-page {
   }
 
   .masthead-title {
-    font-size: 2rem;
-    letter-spacing: 0.1em;
+    font-size: 2.5rem;
+    letter-spacing: 0.06em;
+    transform: scaleY(1.3);
   }
 
   .wsj-top-meta {
