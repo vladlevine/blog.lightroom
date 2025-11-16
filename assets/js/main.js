@@ -1,39 +1,9 @@
 /**
  * The Lightroom Studio Blog - Main JavaScript
- * Handles category filtering and interactive features
+ * Handles interactive features
  */
 
-// Category Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Category Filter Buttons
-    const filterButtons = document.querySelectorAll('.category-btn');
-    const postCards = document.querySelectorAll('.post-card');
-
-    if (filterButtons.length > 0 && postCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const category = this.getAttribute('data-category');
-
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                // Filter posts
-                postCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-
-                    if (category === 'all' || cardCategory === category) {
-                        card.style.display = 'block';
-                        // Add fade-in animation
-                        card.style.animation = 'fadeIn 0.3s ease';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
 
     // Smooth Scroll for Anchor Links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -56,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add Reading Progress Bar (optional feature for blog posts)
+    // Add Reading Progress Bar (for blog posts)
     if (document.querySelector('.article-content')) {
         createReadingProgressBar();
     }
 
-    // Copy Code Block Functionality (optional)
+    // Copy Code Block Functionality (if code blocks exist)
     addCopyButtonsToCodeBlocks();
 });
 
@@ -143,32 +113,6 @@ function addCopyButtonsToCodeBlocks() {
 
         pre.appendChild(button);
     });
-}
-
-/**
- * Simple search functionality (optional - can be enhanced)
- */
-function initializeSearch() {
-    const searchInput = document.getElementById('search-input');
-    const postCards = document.querySelectorAll('.post-card');
-
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
-
-            postCards.forEach(card => {
-                const title = card.querySelector('.post-card-title').textContent.toLowerCase();
-                const excerpt = card.querySelector('.post-card-excerpt').textContent.toLowerCase();
-                const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
-
-                const matches = title.includes(query) ||
-                               excerpt.includes(query) ||
-                               tags.some(tag => tag.includes(query));
-
-                card.style.display = matches ? 'block' : 'none';
-            });
-        });
-    }
 }
 
 // Add fade-in animation keyframes dynamically
