@@ -37,8 +37,8 @@
   --font-heading: 'EB Garamond', Georgia, serif;
 
   /* Container widths */
-  --width-catalog: 1100px;
-  --width-article: 720px;
+  --width-catalog: 750px;
+  --width-article: 750px;
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -60,21 +60,16 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Main catalog page: white background */
+/* All pages: black background on sides, white content in center */
 body {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.75;
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Blog post pages: black background on sides */
-body.article-page {
-  background-color: var(--color-black);
 }
 
 /* ============================================
@@ -233,7 +228,7 @@ a:hover {
 .search-container {
   position: relative;
   max-width: 600px;
-  margin: 0 auto var(--spacing-2xl) auto;
+  margin: 0 auto var(--spacing-md) auto;
 }
 
 .search-input {
@@ -611,40 +606,32 @@ a:hover {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - SIMPLE GOLD LINK ON BLACK
    ============================================ */
 
 .blog-footer {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: #000000;
   padding: var(--spacing-2xl) var(--spacing-lg);
   text-align: center;
   width: 100%;
   margin-top: var(--spacing-3xl);
-  border-top: 1px solid var(--color-border);
+}
+
+.blog-footer p {
+  margin: 0;
 }
 
 .blog-footer a {
   color: var(--color-accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  font-size: 0.9rem;
   transition: all var(--transition-fast);
+  border-bottom: none;
 }
 
 .blog-footer a:hover {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-accent);
-}
-
-/* Footer on article pages - keep dark */
-body.article-page .blog-footer {
-  background-color: var(--color-bg-dark);
-  color: rgba(255, 255, 255, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.article-page .blog-footer a:hover {
-  color: white;
+  color: #D4AF37;
+  opacity: 0.8;
 }
 
 /* ============================================
