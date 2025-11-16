@@ -47,9 +47,10 @@ body.wsj-layout {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: var(--spacing-lg);
+  width: 95%;
 }
 
 /* ============================================
@@ -58,7 +59,7 @@ body.wsj-layout {
 
 .wsj-masthead {
   text-align: center;
-  padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  padding: var(--spacing-xl) 0 var(--spacing-2xl) 0;
   border-bottom: 4px double var(--color-border);
   margin-bottom: var(--spacing-xl);
 }
@@ -71,7 +72,7 @@ body.wsj-layout {
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
   padding: 0 var(--spacing-lg);
 }
 
@@ -93,10 +94,11 @@ body.wsj-layout {
   font-size: 4.5rem;
   font-weight: 900;
   letter-spacing: 0.08em;
-  margin: var(--spacing-md) 0;
-  line-height: 0.9;
+  margin: var(--spacing-xl) 0;
+  line-height: 1.1;
   transform: scaleY(1.4);
   transform-origin: center;
+  padding: var(--spacing-md) 0;
 }
 
 .masthead-title a {
@@ -125,7 +127,7 @@ body.wsj-layout {
 
 .wsj-newspaper-grid {
   display: grid;
-  grid-template-columns: 280px 1fr 280px;
+  grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
 }
@@ -651,6 +653,22 @@ body.wsj-article-page {
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
+
+/* Large monitors - more generous spacing */
+@media (min-width: 1600px) {
+  body.wsj-layout {
+    width: 90%;
+  }
+
+  .wsj-newspaper-grid {
+    grid-template-columns: minmax(300px, 350px) 1fr minmax(300px, 350px);
+    gap: var(--spacing-2xl);
+  }
+
+  .masthead-title {
+    font-size: 5rem;
+  }
+}
 
 @media (max-width: 1024px) {
   .wsj-newspaper-grid {
