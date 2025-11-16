@@ -4,7 +4,9 @@
 baseURL = "https://blog.thelightroomstudios.com/"
 languageCode = "en-us"
 title = "The Lightroom Studio Blog"
-theme = "" # Add theme name if using a Hugo theme
+
+# We use custom layouts (not a theme), so theme is not specified
+# theme = ""
 
 # Content directory
 contentDir = "content"
