@@ -1,39 +1,33 @@
 /* ============================================
-   WALL STREET JOURNAL STYLE BLOG
-   Blog Lightroom Studios
-   ============================================ */
-
-/* ============================================
-   CSS VARIABLES
+   THE WALL STREET JOURNAL STYLE BLOG
+   Authentic Newspaper Layout
    ============================================ */
 
 :root {
-  /* WSJ Color Palette */
-  --color-bg: #F9F7F4;              /* Off-white newspaper background */
-  --color-text: #2E2E2E;            /* Dark gray for body text */
-  --color-heading: #000000;         /* Pure black for headings */
-  --color-border: #D8D8D8;          /* Light gray borders */
-  --color-border-dark: #999999;     /* Darker borders */
-  --color-accent: #0274B6;          /* WSJ blue for links */
-  --color-tab-active: #FFFFFF;      /* White background for active tab */
+  /* Classic Newspaper Colors */
+  --color-bg: #F9F7F4;
+  --color-text: #1A1A1A;
+  --color-heading: #000000;
+  --color-border: #000000;
+  --color-border-light: #CCCCCC;
+  --color-accent: #0066CC;
 
-  /* WSJ Typography - Authentic newspaper fonts */
-  /* Using Lora (Escrow replacement) and Work Sans (Franklin Gothic replacement) */
-  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Work Sans', 'Franklin Gothic', Arial, sans-serif;
-  --font-headline: 'Crimson Text', Georgia, serif;  /* For major headlines (Dispatch replacement) */
+  /* Newspaper Typography */
+  --font-masthead: 'Playfair Display', Georgia, serif;
+  --font-headline: 'Libre Baskerville', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-sans: 'Work Sans', Arial, sans-serif;
 
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
+  /* Tight Newspaper Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
 }
 
 /* ============================================
-   RESET & BASE STYLES
+   BASE STYLES
    ============================================ */
 
 * {
@@ -44,327 +38,311 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 body.wsj-layout {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
 }
 
 /* ============================================
-   HEADER WITH TABS
+   MASTHEAD - Large Traditional Newspaper Style
    ============================================ */
 
-.wsj-header {
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border-dark);
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+.wsj-masthead {
+  text-align: center;
+  padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  border-bottom: 4px double var(--color-border);
+  margin-bottom: var(--spacing-xl);
 }
 
-.wsj-header-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.wsj-top-meta {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
   padding: 0 var(--spacing-lg);
 }
 
-.wsj-logo {
-  padding: var(--spacing-md) 0;
-}
-
-.wsj-logo a {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-heading);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-}
-
-.wsj-tabs {
-  display: flex;
-  gap: 0;
-  height: 100%;
-}
-
-.wsj-tab {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
+.meta-date {
   font-weight: 600;
+}
+
+.meta-right a {
   color: var(--color-text);
   text-decoration: none;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-left: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 3px solid transparent;
-  background-color: transparent;
-  transition: all 0.2s ease;
-  position: relative;
-  text-transform: lowercase;
 }
 
-.wsj-tab.active {
-  background-color: var(--color-tab-active);
-  border-bottom-color: var(--color-heading);
-  color: var(--color-heading);
-  font-weight: 700;
+.meta-right a:hover {
+  text-decoration: underline;
 }
 
-.wsj-tab:not(.active):hover {
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom-color: var(--color-border-dark);
+.masthead-title {
+  font-family: var(--font-masthead);
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  margin: var(--spacing-md) 0;
+  line-height: 1;
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-
-.wsj-hero {
-  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
-  border-bottom: 3px double var(--color-border-dark);
-  width: 100%;
-  margin: 0;
-}
-
-.wsj-hero h1 {
-  font-family: var(--font-headline);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-heading);
-  text-align: center;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ============================================
-   TWO-COLUMN LAYOUT
-   ============================================ */
-
-.wsj-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-lg);
-  height: calc(90vh - 200px); /* 90% of viewport minus header/hero */
-  overflow: hidden;
-}
-
-.wsj-column {
-  overflow-y: auto;
-  padding-right: var(--spacing-md);
-}
-
-/* Hide scrollbars but keep functionality */
-.wsj-column::-webkit-scrollbar {
-  display: none;
-}
-
-.wsj-column {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-/* ============================================
-   LEFT COLUMN: FEATURED POST
-   ============================================ */
-
-.wsj-column-featured {
-  border-right: 1px solid var(--color-border);
-  padding-right: var(--spacing-xl);
-}
-
-.wsj-featured-post {
-  margin-bottom: var(--spacing-2xl);
-}
-
-.wsj-featured-image {
-  display: block;
-  margin-bottom: var(--spacing-lg);
-  overflow: hidden;
-}
-
-.wsj-featured-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.wsj-featured-image:hover img {
-  transform: scale(1.02);
-}
-
-.wsj-category {
+.masthead-tagline {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-accent);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: inline-block;
+  letter-spacing: 0.15em;
+  color: #666;
+  margin-top: var(--spacing-sm);
+}
+
+/* ============================================
+   THREE-COLUMN NEWSPAPER GRID
+   ============================================ */
+
+.wsj-newspaper-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================
+   DIVIDERS - Newspaper Style
+   ============================================ */
+
+.divider-thick {
+  height: 3px;
+  background-color: var(--color-border);
+  margin: var(--spacing-md) 0;
+}
+
+.divider-thin {
+  height: 1px;
+  background-color: var(--color-border-light);
+  margin: var(--spacing-md) 0;
+}
+
+/* ============================================
+   LEFT COLUMN: What's News
+   ============================================ */
+
+.whats-news-section {
+  border-right: 1px solid var(--color-border-light);
+  padding-right: var(--spacing-lg);
+}
+
+.section-heading {
+  font-family: var(--font-headline);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
   margin-bottom: var(--spacing-sm);
 }
 
-.wsj-featured-title {
-  font-family: var(--font-headline);
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: var(--spacing-md);
-}
-
-.wsj-featured-title a {
-  color: var(--color-heading);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.wsj-featured-title a:hover {
-  color: var(--color-accent);
-}
-
-.wsj-featured-excerpt {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text);
-  margin-bottom: var(--spacing-lg);
-}
-
-.wsj-meta {
+.news-category h3 {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
-  color: #666;
-  display: flex;
-  gap: var(--spacing-md);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.wsj-readtime {
-  color: #999;
-}
-
-/* ============================================
-   RIGHT COLUMN: POST LIST
-   ============================================ */
-
-.wsj-list-heading {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-heading);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--color-heading);
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
 }
 
-.wsj-post-list {
+.news-bullets {
   list-style: none;
+  padding: 0;
 }
 
-.wsj-post-item {
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.wsj-post-item:last-child {
-  border-bottom: none;
-}
-
-.wsj-post-item a {
-  text-decoration: none;
-  display: block;
-  transition: all 0.2s ease;
-}
-
-.wsj-post-item a:hover {
-  padding-left: var(--spacing-xs);
-}
-
-.wsj-post-item h4 {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--color-heading);
-  margin-bottom: var(--spacing-xs);
-  transition: color 0.2s ease;
-}
-
-.wsj-post-item a:hover h4 {
-  color: var(--color-accent);
-}
-
-.wsj-post-item time {
-  font-family: var(--font-sans);
+.news-bullets li {
   font-size: 0.8125rem;
-  color: #999;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-sm);
+  text-align: justify;
+}
+
+.news-bullets li strong {
+  font-weight: 700;
 }
 
 /* ============================================
-   ARTICLE PAGE - TWO COLUMN NEWSPAPER LAYOUT
+   CENTER COLUMN: Main Story
    ============================================ */
 
+.main-story {
+  border-right: 1px solid var(--color-border-light);
+  padding-right: var(--spacing-xl);
+}
+
+.main-headline {
+  font-family: var(--font-headline);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.main-headline a {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.main-headline a:hover {
+  color: var(--color-accent);
+}
+
+.subheadline {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md);
+  color: #333;
+}
+
+.byline {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+}
+
+.story-image {
+  margin: var(--spacing-lg) 0;
+  border: 1px solid var(--color-border-light);
+}
+
+.story-image img {
+  width: 100%;
+  display: block;
+}
+
+.story-text {
+  columns: 2;
+  column-gap: var(--spacing-xl);
+  text-align: justify;
+}
+
+.story-text p {
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Dropcap */
+.dropcap {
+  float: left;
+  font-family: var(--font-headline);
+  font-size: 3.5rem;
+  line-height: 0.8;
+  font-weight: 700;
+  margin: 0.1em 0.1em 0 0;
+}
+
+.continued {
+  font-style: italic;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--spacing-sm);
+}
+
+/* ============================================
+   RIGHT COLUMN: Side Stories
+   ============================================ */
+
+.side-stories {
+  font-size: 0.875rem;
+}
+
+.side-story {
+  margin-bottom: var(--spacing-lg);
+}
+
+.side-headline {
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+
+.side-headline a {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.side-headline a:hover {
+  color: var(--color-accent);
+}
+
+.story-snippet {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-xs);
+  text-align: justify;
+}
+
+.byline-small {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.wsj-footer {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+}
+
+.wsj-footer a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin: 0 var(--spacing-sm);
+}
+
+.wsj-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   ARTICLE PAGE STYLES
+   ============================================ */
+
+body.wsj-article-page {
+  background-color: var(--color-bg);
+}
+
 .wsj-article-main {
-  max-width: 70%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: var(--spacing-2xl);
-  padding: var(--spacing-lg);
-  height: calc(90vh - 80px); /* 90% of viewport minus header */
-  overflow: hidden;
+  max-width: 900px;
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-lg);
 }
 
-.wsj-article-sidebar {
-  overflow-y: auto;
-  padding-right: var(--spacing-md);
-  border-right: 1px solid var(--color-border);
-}
-
-.wsj-article-content {
-  overflow-y: auto;
-  padding-right: var(--spacing-md);
-}
-
-/* Hide scrollbars on article page columns */
-.wsj-article-sidebar::-webkit-scrollbar,
-.wsj-article-content::-webkit-scrollbar {
-  display: none;
-}
-
-.wsj-article-sidebar,
-.wsj-article-content {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-/* Article Header Styling */
 .article-header {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
   padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 3px double var(--color-border);
 }
 
 .article-category {
@@ -383,13 +361,13 @@ body.wsj-layout {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-heading);
-  line-height: 1.3;
+  line-height: 1.2;
   margin-bottom: var(--spacing-md);
 }
 
 .article-meta {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #666;
   display: flex;
   gap: var(--spacing-md);
@@ -397,48 +375,43 @@ body.wsj-layout {
   margin-bottom: var(--spacing-sm);
 }
 
-.article-readtime,
-.article-author {
-  color: #999;
-}
-
-/* Article Content Styling */
 .article-content {
-  font-family: var(--font-serif);
-  font-size: 1.0625rem;
-  line-height: 1.8;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--color-text);
+  columns: 2;
+  column-gap: var(--spacing-xl);
+  text-align: justify;
 }
 
 .article-content h2 {
   font-family: var(--font-headline);
   font-size: 1.75rem;
   font-weight: 700;
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-md);
-  color: var(--color-heading);
+  column-span: all;
+  break-after: avoid;
 }
 
 .article-content h3 {
-  font-family: var(--font-serif);
-  font-size: 1.375rem;
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading);
+  break-after: avoid;
 }
 
 .article-content p {
   margin-bottom: var(--spacing-md);
+  break-inside: avoid;
 }
 
 .article-content a {
   color: var(--color-accent);
   text-decoration: underline;
-}
-
-.article-content a:hover {
-  color: var(--color-heading);
 }
 
 .article-content ul,
@@ -448,16 +421,11 @@ body.wsj-layout {
 }
 
 .article-content li {
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .article-content strong {
-  font-weight: 600;
-  color: var(--color-heading);
-}
-
-.article-content em {
-  font-style: italic;
+  font-weight: 700;
 }
 
 .article-hero {
@@ -465,6 +433,8 @@ body.wsj-layout {
   height: auto;
   margin-bottom: var(--spacing-xl);
   display: block;
+  column-span: all;
+  border: 1px solid var(--color-border-light);
 }
 
 .back-to-blog {
@@ -474,11 +444,9 @@ body.wsj-layout {
   text-decoration: none;
   display: inline-block;
   margin-top: var(--spacing-xl);
-  transition: color 0.2s ease;
 }
 
 .back-to-blog:hover {
-  color: var(--color-heading);
   text-decoration: underline;
 }
 
@@ -490,7 +458,6 @@ body.wsj-layout {
   margin-top: var(--spacing-xl);
 }
 
-/* Tags on article page */
 .post-card-tags {
   display: flex;
   gap: var(--spacing-xs);
@@ -500,152 +467,66 @@ body.wsj-layout {
 
 .tag {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: #666;
   background-color: rgba(0, 0, 0, 0.05);
   padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
-
-.wsj-footer {
-  background-color: var(--color-bg);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-  margin-top: var(--spacing-2xl);
-}
-
-.wsj-footer p {
-  margin: 0;
-}
-
-.wsj-footer a {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.wsj-footer a:hover {
-  color: var(--color-heading);
-  text-decoration: underline;
+  border-radius: 2px;
 }
 
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
-@media (max-width: 968px) {
-  .wsj-main {
+@media (max-width: 1024px) {
+  .wsj-newspaper-grid {
     grid-template-columns: 1fr;
-    height: auto;
-    overflow: visible;
+    gap: var(--spacing-xl);
   }
 
-  .wsj-column {
-    overflow-y: visible;
-    max-height: none;
-    padding-right: 0;
-  }
-
-  .wsj-column-featured {
+  .whats-news-section,
+  .main-story {
     border-right: none;
     padding-right: 0;
-    margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
-    border-bottom: 3px double var(--color-border-dark);
+    margin-bottom: var(--spacing-xl);
   }
 
-  .wsj-hero h1 {
-    font-size: 2rem;
+  .masthead-title {
+    font-size: 3rem;
   }
 
-  .wsj-featured-title {
-    font-size: 1.75rem;
-  }
-
-  /* Article page responsive */
-  .wsj-article-main {
-    max-width: 90%;
-    grid-template-columns: 1fr;
-    height: auto;
-    overflow: visible;
-  }
-
-  .wsj-article-sidebar {
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-    overflow-y: visible;
-    max-height: 400px;
-  }
-
-  .wsj-article-content {
-    overflow-y: visible;
-    max-height: none;
-  }
-
-  .article-title {
-    font-size: 2rem;
+  .story-text,
+  .article-content {
+    columns: 1;
   }
 }
 
 @media (max-width: 640px) {
-  .wsj-header-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-  }
-
-  .wsj-tabs {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .wsj-tab {
-    flex: 1;
-    text-align: center;
-    font-size: 0.75rem;
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-
-  .wsj-hero h1 {
-    font-size: 1.75rem;
-  }
-
-  .wsj-featured-title {
-    font-size: 1.5rem;
-  }
-
-  .wsj-main {
+  body.wsj-layout {
     padding: var(--spacing-md);
   }
 
-  /* Article page mobile */
-  .wsj-article-main {
-    max-width: 95%;
-    padding: var(--spacing-sm);
+  .masthead-title {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
   }
 
-  .article-title {
+  .wsj-top-meta {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-size: 0.625rem;
+  }
+
+  .main-headline {
     font-size: 1.75rem;
   }
 
+  .article-title {
+    font-size: 2rem;
+  }
+
+  .story-text,
   .article-content {
-    font-size: 1rem;
-  }
-
-  .article-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .article-content h3 {
-    font-size: 1.25rem;
+    columns: 1;
   }
 }

@@ -25,140 +25,132 @@
     <!-- WSJ-Style Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body class="wsj-layout">
 
-    <!-- Header Navigation with Tabs -->
-    <header class="wsj-header">
-        <div class="wsj-header-content">
-            <!-- Logo/Brand -->
-            <div class="wsj-logo">
-                <a href="index.html">blog.lightroom</a>
-            </div>
-
-            <!-- Tab Navigation -->
-            <nav class="wsj-tabs">
-                <a href="index.html" class="wsj-tab active">blog.lightroom</a>
-                <a href="https://thelightroomstudios.com" class="wsj-tab">lightroom main page</a>
-            </nav>
+    <!-- Classic Newspaper Masthead -->
+    <header class="wsj-masthead">
+        <div class="wsj-top-meta">
+            <span class="meta-left">blog.lightroom</span>
+            <span class="meta-date">SATURDAY, NOVEMBER 16, 2024 - VOL. I NO. 1</span>
+            <span class="meta-right"><a href="https://thelightroomstudios.com">Main Site</a></span>
         </div>
+
+        <h1 class="masthead-title">THE LIGHTROOM STUDIOS BLOG</h1>
+
+        <div class="masthead-tagline">Photography · Insights · Industry Perspectives</div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="wsj-hero">
-        <h1>Blog Lightroom Studios</h1>
-    </section>
+    <!-- Main Newspaper Grid -->
+    <main class="wsj-newspaper-grid">
 
-    <!-- Two-Column Layout -->
-    <main class="wsj-main">
+        <!-- Left Column: What's News -->
+        <aside class="whats-news-section">
+            <h2 class="section-heading">What's News</h2>
+            <div class="divider-thick"></div>
 
-        <!-- Left Column: Featured Article -->
-        <div class="wsj-column wsj-column-featured">
-            <article class="wsj-featured-post">
-                <a href="posts/art-photography-digitization-guide.html" class="wsj-featured-image">
-                    <img
-                        src="https://res.cloudinary.com/dtuxu64zp/image/upload/v1763249846/empty_art_gallery_with_artworks.png"
-                        alt="Professional art gallery with artwork displays"
-                        loading="eager"
-                    >
+            <div class="news-category">
+                <h3>Photography</h3>
+                <ul class="news-bullets">
+                    <li><strong>Art digitization standards</strong> evolve as museums demand higher resolution documentation. Professional photographers adapt to 600+ DPI requirements.</li>
+                    <li><strong>Studio lighting techniques</strong> continue to shape modern commercial photography workflows.</li>
+                    <li><strong>Color grading tools</strong> advance with AI-powered post-production becoming industry standard.</li>
+                </ul>
+            </div>
+
+            <div class="divider-thin"></div>
+
+            <div class="news-category">
+                <h3>Industry</h3>
+                <ul class="news-bullets">
+                    <li><strong>Portfolio building</strong> remains crucial for emerging photographers seeking client work.</li>
+                    <li><strong>Equipment costs</strong> rise as camera manufacturers introduce new professional bodies.</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Center Column: Main Story -->
+        <article class="main-story">
+            <h2 class="main-headline">
+                <a href="posts/art-photography-digitization-guide.html">
+                    Art Photography & Digitization: Preserving and Showcasing Your Artwork Online
                 </a>
+            </h2>
 
-                <div class="wsj-featured-content">
-                    <span class="wsj-category">Photography</span>
+            <p class="subheadline">
+                Proposal for Professional Standards Would Force Galleries to Adopt More Rigorous Documentation Methods
+            </p>
 
-                    <h2 class="wsj-featured-title">
-                        <a href="posts/art-photography-digitization-guide.html">
-                            Art Photography & Digitization: Preserving and Showcasing Your Artwork Online
-                        </a>
-                    </h2>
+            <div class="divider-thin"></div>
 
-                    <p class="wsj-featured-excerpt">
-                        Professional guide to photographing and digitizing artwork for galleries, artists, and museums. Learn proper techniques, pricing, equipment needs, and best practices for archival-quality documentation.
-                    </p>
+            <p class="byline">By THE LIGHTROOM STUDIO</p>
 
-                    <div class="wsj-meta">
-                        <time datetime="2025-11-16">November 16, 2025</time>
-                        <span class="wsj-readtime">12 min read</span>
-                    </div>
-                </div>
+            <div class="story-image">
+                <img src="https://res.cloudinary.com/dtuxu64zp/image/upload/v1763249846/empty_art_gallery_with_artworks.png" alt="Art Gallery">
+            </div>
+
+            <div class="story-text">
+                <p><span class="dropcap">P</span>rofessional art photography and digitization have become essential services for galleries, museums, and private collectors seeking to preserve and showcase their collections in the digital age. As the demand for high-quality artwork documentation grows, photographers must adapt to increasingly stringent technical requirements.</p>
+
+                <p>The shift toward digital documentation has transformed how institutions manage their collections. Museum-quality digitization now requires resolutions of 300-600 DPI at actual artwork size, with some institutions demanding even higher standards for permanent archival records.</p>
+
+                <p>Industry experts note that proper lighting, color accuracy, and archival standards distinguish professional art documentation from regular photography. The technical requirements create barriers to entry, but also ensure that documented works can be faithfully reproduced for publications, insurance purposes, and online catalogs.</p>
+
+                <p class="continued">Continued on Article Page...</p>
+            </div>
+        </article>
+
+        <!-- Right Column: Additional Stories -->
+        <aside class="side-stories">
+            <article class="side-story">
+                <h3 class="side-headline">
+                    <a href="#">Studio Lighting Techniques for Professional Photography</a>
+                </h3>
+                <p class="story-snippet">Advanced methods for controlling light in commercial photography environments continue to evolve as LED technology...</p>
+                <p class="byline-small">By Staff</p>
             </article>
-        </div>
 
-        <!-- Right Column: Post List -->
-        <aside class="wsj-column wsj-column-list">
-            <h3 class="wsj-list-heading">Recent Articles</h3>
+            <div class="divider-thin"></div>
 
-            <ul class="wsj-post-list">
-                <li class="wsj-post-item">
-                    <a href="posts/art-photography-digitization-guide.html">
-                        <h4>Art Photography & Digitization</h4>
-                        <time datetime="2025-11-16">Nov 16, 2025</time>
-                    </a>
-                </li>
+            <article class="side-story">
+                <h3 class="side-headline">
+                    <a href="#">Color Grading in Post-Production</a>
+                </h3>
+                <p class="story-snippet">Professional photographers increasingly rely on sophisticated color grading workflows to achieve consistent results across...</p>
+                <p class="byline-small">By Staff</p>
+            </article>
 
-                <!-- Placeholder posts for demonstration -->
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Studio Lighting Techniques for Professional Photography</h4>
-                        <time datetime="2025-11-15">Nov 15, 2025</time>
-                    </a>
-                </li>
+            <div class="divider-thin"></div>
 
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Color Grading in Post-Production</h4>
-                        <time datetime="2025-11-14">Nov 14, 2025</time>
-                    </a>
-                </li>
+            <article class="side-story">
+                <h3 class="side-headline">
+                    <a href="#">Building Your Photography Portfolio</a>
+                </h3>
+                <p class="story-snippet">Essential strategies for emerging photographers seeking to establish credibility and attract high-value clients in competitive...</p>
+                <p class="byline-small">By Staff</p>
+            </article>
 
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Building Your Photography Portfolio</h4>
-                        <time datetime="2025-11-13">Nov 13, 2025</time>
-                    </a>
-                </li>
+            <div class="divider-thin"></div>
 
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Camera Equipment Essentials for Beginners</h4>
-                        <time datetime="2025-11-12">Nov 12, 2025</time>
-                    </a>
-                </li>
-
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Natural Light Photography Masterclass</h4>
-                        <time datetime="2025-11-11">Nov 11, 2025</time>
-                    </a>
-                </li>
-
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Commercial Photography Pricing Guide</h4>
-                        <time datetime="2025-11-10">Nov 10, 2025</time>
-                    </a>
-                </li>
-
-                <li class="wsj-post-item">
-                    <a href="#">
-                        <h4>Product Photography Setup and Workflow</h4>
-                        <time datetime="2025-11-09">Nov 9, 2025</time>
-                    </a>
-                </li>
-            </ul>
+            <article class="side-story">
+                <h3 class="side-headline">
+                    <a href="#">Camera Equipment Essentials</a>
+                </h3>
+                <p class="story-snippet">Guide to selecting professional photography gear for commercial and editorial work, including lens recommendations...</p>
+                <p class="byline-small">By Staff</p>
+            </article>
         </aside>
 
     </main>
 
     <!-- Footer -->
     <footer class="wsj-footer">
-        <p>
-            <a href="https://thelightroomstudios.com">Back to Main Website</a>
-        </p>
+        <div class="divider-thick"></div>
+        <p><a href="https://thelightroomstudios.com">Back to Main Website</a> | <a href="index.html">Archive</a></p>
     </footer>
 
     <!-- JavaScript -->
