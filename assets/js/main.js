@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Copy Code Block Functionality (if code blocks exist)
     addCopyButtonsToCodeBlocks();
+
+    // Search Functionality (for catalog page)
+    if (document.getElementById('searchInput')) {
+        initializeSearch();
+    }
 });
 
 /**
@@ -112,6 +117,70 @@ function addCopyButtonsToCodeBlocks() {
         });
 
         pre.appendChild(button);
+    });
+}
+
+/**
+ * Initialize search functionality
+ */
+function initializeSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const postsGrid = document.getElementById('postsGrid');
+    const postCards = Array.from(postsGrid.querySelectorAll('.post-card'));
+
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        postCards.forEach(card => {
+            // Get searchable content from the card
+            const title = card.querySelector('.post-card-title')?.textContent.toLowerCase() || '';
+            const excerpt = card.querySelector('.post-card-excerpt')?.textContent.toLowerCase() || '';
+            const category = card.querySelector('.post-card-category')?.textContent.toLowerCase() || '';
+            const tags = Array.from(card.querySelectorAll('.tag'))
+                .map(tag => tag.textContent.toLowerCase())
+                .join(' ');
+
+            // Combine all searchable text
+            const searchableText = `${title} ${excerpt} ${category} ${tags}`;
+
+            // Show or hide card based on search match
+            if (searchTerm === '' || searchableText.includes(searchTerm)) {
+                card.style.display = '';
+                // Add fade-in animation
+                card.style.animation = 'fadeIn 0.3s ease';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Show "no results" message if all cards are hidden
+        const visibleCards = postCards.filter(card => card.style.display !== 'none');
+        let noResultsMsg = document.getElementById('noResultsMessage');
+
+        if (visibleCards.length === 0 && searchTerm !== '') {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.id = 'noResultsMessage';
+                noResultsMsg.style.cssText = `
+                    text-align: center;
+                    padding: 3rem 1rem;
+                    color: var(--color-text-light);
+                    font-size: 1.125rem;
+                `;
+                noResultsMsg.innerHTML = `
+                    <p>No articles found matching "<strong>${searchTerm}</strong>"</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try different keywords or browse all articles below.</p>
+                `;
+                postsGrid.appendChild(noResultsMsg);
+            } else {
+                noResultsMsg.innerHTML = `
+                    <p>No articles found matching "<strong>${searchTerm}</strong>"</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try different keywords or browse all articles below.</p>
+                `;
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
     });
 }
 
