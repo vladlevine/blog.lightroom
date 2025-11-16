@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>The Lightroom Studio Blog | Photography Insights & Tutorials</title>
+    <title>Blog Lightroom Studios | Photography Insights & Tutorials</title>
     <meta name="description" content="Professional photography blog covering techniques, business insights, and industry trends. Expert advice from The Lightroom Studio.">
     <meta name="keywords" content="photography blog, photography tutorials, photography business, professional photography, lighting techniques">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="The Lightroom Studio Blog">
+    <meta property="og:title" content="Blog Lightroom Studios">
     <meta property="og:description" content="Professional photography blog covering techniques, business insights, and industry trends.">
     <meta property="og:url" content="https://blog.thelightroomstudios.com">
-    <meta property="og:site_name" content="The Lightroom Studio Blog">
+    <meta property="og:site_name" content="Blog Lightroom Studios">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://blog.thelightroomstudios.com">
@@ -22,95 +22,140 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <!-- Fonts -->
+    <!-- WSJ-Style Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
-<body>
+<body class="wsj-layout">
 
-    <!-- Top Navigation -->
-    <nav class="top-nav">
-        <a href="https://thelightroomstudios.com">main</a>
-    </nav>
+    <!-- Header Navigation with Tabs -->
+    <header class="wsj-header">
+        <div class="wsj-header-content">
+            <!-- Logo/Brand -->
+            <div class="wsj-logo">
+                <a href="index.html">blog.lightroom</a>
+            </div>
 
-    <!-- Header -->
-    <header class="blog-header">
-        <div class="container">
-            <h1>The Lightroom Studio Blog</h1>
-            <p class="blog-tagline">Photography insights, tutorials, and industry perspectives</p>
+            <!-- Tab Navigation -->
+            <nav class="wsj-tabs">
+                <a href="index.html" class="wsj-tab active">blog.lightroom</a>
+                <a href="https://thelightroomstudios.com" class="wsj-tab">lightroom main page</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
+    <!-- Hero Section -->
+    <section class="wsj-hero">
+        <h1>Blog Lightroom Studios</h1>
+    </section>
 
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input
-                type="text"
-                id="searchInput"
-                class="search-input"
-                placeholder="Search articles..."
-                aria-label="Search blog posts"
-            >
-            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
+    <!-- Two-Column Layout -->
+    <main class="wsj-main">
 
-        <!-- Posts Grid -->
-        <div class="posts-grid" id="postsGrid">
-
-            <!-- Blog Post 1: Art Photography & Digitization -->
-            <article class="post-card">
-                <a href="posts/art-photography-digitization-guide.html">
+        <!-- Left Column: Featured Article -->
+        <div class="wsj-column wsj-column-featured">
+            <article class="wsj-featured-post">
+                <a href="posts/art-photography-digitization-guide.html" class="wsj-featured-image">
                     <img
                         src="https://res.cloudinary.com/dtuxu64zp/image/upload/v1763249846/empty_art_gallery_with_artworks.png"
                         alt="Professional art gallery with artwork displays"
-                        class="post-card-image"
-                        loading="lazy"
+                        loading="eager"
                     >
                 </a>
 
-                <div class="post-card-content">
-                    <span class="post-card-category">Photography</span>
+                <div class="wsj-featured-content">
+                    <span class="wsj-category">Photography</span>
 
-                    <h2 class="post-card-title">
-                        <a href="posts/art-photography-digitization-guide.html">Art Photography & Digitization: Preserving Your Artwork Online</a>
+                    <h2 class="wsj-featured-title">
+                        <a href="posts/art-photography-digitization-guide.html">
+                            Art Photography & Digitization: Preserving and Showcasing Your Artwork Online
+                        </a>
                     </h2>
 
-                    <p class="post-card-excerpt">
-                        Professional guide to photographing and digitizing artwork for galleries, artists, and museums. Learn proper techniques, pricing, equipment needs, and archival-quality documentation standards.
+                    <p class="wsj-featured-excerpt">
+                        Professional guide to photographing and digitizing artwork for galleries, artists, and museums. Learn proper techniques, pricing, equipment needs, and best practices for archival-quality documentation.
                     </p>
 
-                    <div class="post-card-meta">
-                        <div class="post-card-date">
-                            <time datetime="2025-11-16">Nov 16, 2025</time>
-                        </div>
-                        <span class="post-card-readtime">12 min read</span>
-                    </div>
-
-                    <div class="post-card-tags">
-                        <span class="tag">art photography</span>
-                        <span class="tag">digitization</span>
-                        <span class="tag">galleries</span>
+                    <div class="wsj-meta">
+                        <time datetime="2025-11-16">November 16, 2025</time>
+                        <span class="wsj-readtime">12 min read</span>
                     </div>
                 </div>
             </article>
-
-            <!-- Add more blog posts here as HTML files in /posts/ directory -->
-            <!-- Copy the structure above for each new post -->
-
         </div>
+
+        <!-- Right Column: Post List -->
+        <aside class="wsj-column wsj-column-list">
+            <h3 class="wsj-list-heading">Recent Articles</h3>
+
+            <ul class="wsj-post-list">
+                <li class="wsj-post-item">
+                    <a href="posts/art-photography-digitization-guide.html">
+                        <h4>Art Photography & Digitization</h4>
+                        <time datetime="2025-11-16">Nov 16, 2025</time>
+                    </a>
+                </li>
+
+                <!-- Placeholder posts for demonstration -->
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Studio Lighting Techniques for Professional Photography</h4>
+                        <time datetime="2025-11-15">Nov 15, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Color Grading in Post-Production</h4>
+                        <time datetime="2025-11-14">Nov 14, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Building Your Photography Portfolio</h4>
+                        <time datetime="2025-11-13">Nov 13, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Camera Equipment Essentials for Beginners</h4>
+                        <time datetime="2025-11-12">Nov 12, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Natural Light Photography Masterclass</h4>
+                        <time datetime="2025-11-11">Nov 11, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Commercial Photography Pricing Guide</h4>
+                        <time datetime="2025-11-10">Nov 10, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Product Photography Setup and Workflow</h4>
+                        <time datetime="2025-11-09">Nov 9, 2025</time>
+                    </a>
+                </li>
+            </ul>
+        </aside>
 
     </main>
 
     <!-- Footer -->
-    <footer class="blog-footer">
+    <footer class="wsj-footer">
         <p>
             <a href="https://thelightroomstudios.com">Back to Main Website</a>
         </p>
@@ -118,6 +163,5 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>
