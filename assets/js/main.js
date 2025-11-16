@@ -199,3 +199,84 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+/* ============================================
+   SOCIAL SHARE FUNCTIONALITY
+   ============================================ */
+
+function openSharePopup() {
+    const popup = document.getElementById('sharePopup');
+    if (popup) {
+        popup.classList.add('active');
+    }
+}
+
+function closeSharePopup() {
+    const popup = document.getElementById('sharePopup');
+    if (popup) {
+        popup.classList.remove('active');
+    }
+    // Hide success message
+    const successMsg = document.getElementById('copySuccess');
+    if (successMsg) {
+        successMsg.style.display = 'none';
+    }
+}
+
+function getShareUrl() {
+    return window.location.href;
+}
+
+function getShareTitle() {
+    return document.title;
+}
+
+function shareOnTwitter() {
+    const url = getShareUrl();
+    const text = getShareTitle();
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+    window.open(twitterUrl, '_blank', 'width=600,height=400');
+}
+
+function shareOnFacebook() {
+    const url = getShareUrl();
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    window.open(facebookUrl, '_blank', 'width=600,height=400');
+}
+
+function shareOnLinkedIn() {
+    const url = getShareUrl();
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    window.open(linkedInUrl, '_blank', 'width=600,height=400');
+}
+
+function shareByEmail() {
+    const url = getShareUrl();
+    const title = getShareTitle();
+    const emailSubject = encodeURIComponent(title);
+    const emailBody = encodeURIComponent(`I thought you might find this interesting: ${url}`);
+    window.location.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+}
+
+function copyLink() {
+    const url = getShareUrl();
+    navigator.clipboard.writeText(url).then(function() {
+        const successMsg = document.getElementById('copySuccess');
+        if (successMsg) {
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 3000);
+        }
+    }).catch(function(err) {
+        console.error('Failed to copy link: ', err);
+        alert('Failed to copy link. Please copy manually: ' + url);
+    });
+}
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSharePopup();
+    }
+});
