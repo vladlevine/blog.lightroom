@@ -37,10 +37,10 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/css/main.css">
 
-    <!-- Fonts -->
+    <!-- WSJ-Style Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
@@ -108,23 +108,86 @@
     }
     </script>
 </head>
-<body class="article-page">
+<body class="wsj-layout wsj-article-page">
 
-    <!-- Top Navigation -->
-    <nav class="top-nav">
-        <a href="https://thelightroomstudios.com">main</a>
-    </nav>
+    <!-- Header Navigation with Tabs -->
+    <header class="wsj-header">
+        <div class="wsj-header-content">
+            <!-- Logo/Brand -->
+            <div class="wsj-logo">
+                <a href="../index.html">blog.lightroom</a>
+            </div>
 
-    <!-- Header -->
-    <header class="blog-header">
-        <div class="container">
-            <h1><a href="../index.html" style="color: white; text-decoration: none;">The Lightroom Studio Blog</a></h1>
-            <p class="blog-tagline">Photography insights, tutorials, and industry perspectives</p>
+            <!-- Tab Navigation -->
+            <nav class="wsj-tabs">
+                <a href="../index.html" class="wsj-tab">blog.lightroom</a>
+                <a href="https://thelightroomstudios.com" class="wsj-tab">lightroom main page</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Article Container -->
-    <article class="article-container">
+    <!-- Two-Column Article Layout -->
+    <main class="wsj-article-main">
+
+        <!-- Left Column: Related Posts List -->
+        <aside class="wsj-article-sidebar">
+            <h3 class="wsj-list-heading">More Articles</h3>
+
+            <ul class="wsj-post-list">
+                <li class="wsj-post-item">
+                    <a href="art-photography-digitization-guide.html">
+                        <h4>Art Photography & Digitization</h4>
+                        <time datetime="2025-11-16">Nov 16, 2025</time>
+                    </a>
+                </li>
+
+                <!-- Placeholder posts -->
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Studio Lighting Techniques</h4>
+                        <time datetime="2025-11-15">Nov 15, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Color Grading in Post-Production</h4>
+                        <time datetime="2025-11-14">Nov 14, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Building Your Photography Portfolio</h4>
+                        <time datetime="2025-11-13">Nov 13, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Camera Equipment Essentials</h4>
+                        <time datetime="2025-11-12">Nov 12, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Natural Light Photography</h4>
+                        <time datetime="2025-11-11">Nov 11, 2025</time>
+                    </a>
+                </li>
+
+                <li class="wsj-post-item">
+                    <a href="#">
+                        <h4>Commercial Photography Pricing</h4>
+                        <time datetime="2025-11-10">Nov 10, 2025</time>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Right Column: Article Content -->
+        <article class="wsj-article-content">
 
         <!-- Article Header -->
         <header class="article-header">
@@ -432,10 +495,12 @@
             <a href="../index.html" class="back-to-blog">← Back to Blog</a>
         </div>
 
-    </article>
+        </article>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="blog-footer">
+    <footer class="wsj-footer">
         <p>
             <a href="https://thelightroomstudios.com">Back to Main Website</a>
         </p>
