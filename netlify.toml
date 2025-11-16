@@ -1,0 +1,62 @@
+# Netlify Configuration for The Lightroom Studio Blog
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Build command to generate the static site
+  command = "hugo --minify"
+
+  # Directory that Hugo outputs the built site to
+  publish = "public"
+
+  # Base directory (if your Hugo site is in a subdirectory, specify it here)
+  # base = ""
+
+[build.environment]
+  # Specify Hugo version for Netlify to install
+  # Check latest version at: https://github.com/gohugoio/hugo/releases
+  HUGO_VERSION = "0.121.1"
+
+  # Use extended version of Hugo (includes SCSS/SASS support)
+  HUGO_ENV = "production"
+
+[context.production]
+  # Production-specific settings
+  command = "hugo --minify"
+
+[context.deploy-preview]
+  # Settings for deploy previews (when you open a PR)
+  command = "hugo --minify --buildFuture"
+
+[context.branch-deploy]
+  # Settings for branch deploys
+  command = "hugo --minify"
+
+# Redirect rules (optional - add custom redirects here if needed)
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301
+
+# Custom headers (optional - for security, caching, etc.)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
