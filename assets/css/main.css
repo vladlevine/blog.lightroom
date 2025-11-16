@@ -242,9 +242,8 @@ body.wsj-layout {
 }
 
 .story-text {
-  columns: 2;
-  column-gap: var(--spacing-xl);
-  text-align: justify;
+  text-align: left;
+  max-width: 650px;
 }
 
 .story-text p {
@@ -393,9 +392,14 @@ body.wsj-article-page {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--color-text);
+  max-width: 720px;
+  text-align: left;
+}
+
+/* Special two-column sections (can be added with a class) */
+.article-content .two-columns {
   columns: 2;
   column-gap: var(--spacing-xl);
-  text-align: justify;
 }
 
 .article-content h2 {
@@ -404,7 +408,6 @@ body.wsj-article-page {
   font-weight: 700;
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-md);
-  column-span: all;
   break-after: avoid;
 }
 
@@ -662,11 +665,6 @@ body.wsj-article-page {
   .masthead-title {
     font-size: 3rem;
   }
-
-  .story-text,
-  .article-content {
-    columns: 1;
-  }
 }
 
 @media (max-width: 640px) {
@@ -691,10 +689,5 @@ body.wsj-article-page {
 
   .article-title {
     font-size: 2rem;
-  }
-
-  .story-text,
-  .article-content {
-    columns: 1;
   }
 }
