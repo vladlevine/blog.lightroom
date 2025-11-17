@@ -2,7 +2,10 @@
 # No build process needed - serving static HTML files directly
 
 [build]
-  # No build command needed for static HTML
+  # Explicitly set empty build command (overrides UI settings)
+  command = ""
+
+  # Publish directory is root (all HTML files are here)
   publish = "."
 
   # Base directory is root
