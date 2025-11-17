@@ -599,28 +599,28 @@ body.wsj-layout {
 }
 
 /* ============================================
-   NEWSPAPER-STYLE ADVERTISEMENTS
+   STUDIO FEATURE BOXES (Newspaper-style)
    ============================================ */
 
-.newspaper-ad {
+.studio-feature {
   margin: var(--spacing-lg) 0;
 }
 
-.ad-border {
+.feature-border {
   border: 3px double var(--color-border);
   padding: var(--spacing-md);
   background-color: var(--color-bg);
   text-align: center;
 }
 
-.ad-border-simple {
+.feature-border-simple {
   border: 2px solid var(--color-border);
   padding: var(--spacing-md);
   background-color: var(--color-bg);
   text-align: center;
 }
 
-.ad-header {
+.feature-header {
   font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 700;
@@ -629,7 +629,7 @@ body.wsj-layout {
   margin-bottom: var(--spacing-sm);
 }
 
-.ad-business-name {
+.business-name {
   font-family: var(--font-headline);
   font-size: 1.125rem;
   font-weight: 700;
@@ -638,11 +638,11 @@ body.wsj-layout {
   color: var(--color-heading);
 }
 
-.ad-services {
+.services-list {
   margin: var(--spacing-md) 0;
 }
 
-.ad-service-item {
+.service-item {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 600;
@@ -651,18 +651,18 @@ body.wsj-layout {
   letter-spacing: 0.02em;
 }
 
-.ad-text {
+.feature-text {
   font-family: var(--font-body);
   font-size: 0.75rem;
   line-height: 1.4;
   margin: var(--spacing-sm) 0;
 }
 
-.ad-contact {
+.contact-info {
   margin: var(--spacing-md) 0;
 }
 
-.ad-phone {
+.phone-number {
   font-family: var(--font-headline);
   font-size: 1rem;
   font-weight: 700;
@@ -670,14 +670,14 @@ body.wsj-layout {
   color: var(--color-heading);
 }
 
-.ad-website {
+.website-link {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   margin: var(--spacing-xs) 0;
   font-weight: 600;
 }
 
-.ad-footer {
+.feature-footer {
   font-family: var(--font-sans);
   font-size: 0.625rem;
   margin-top: var(--spacing-sm);
@@ -685,7 +685,7 @@ body.wsj-layout {
   font-style: italic;
 }
 
-.ad-callout {
+.callout-title {
   font-family: var(--font-headline);
   font-size: 0.9375rem;
   font-weight: 700;
@@ -693,7 +693,7 @@ body.wsj-layout {
   color: var(--color-heading);
 }
 
-.ad-simple-text {
+.simple-text {
   font-family: var(--font-body);
   font-size: 0.75rem;
   line-height: 1.5;
