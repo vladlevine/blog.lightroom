@@ -1,39 +1,12 @@
 /**
  * The Lightroom Studio Blog - Main JavaScript
- * Handles category filtering and interactive features
+ * Handles interactive features
  */
 
-// Category Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Category Filter Buttons
-    const filterButtons = document.querySelectorAll('.category-btn');
-    const postCards = document.querySelectorAll('.post-card');
-
-    if (filterButtons.length > 0 && postCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const category = this.getAttribute('data-category');
-
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                // Filter posts
-                postCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-
-                    if (category === 'all' || cardCategory === category) {
-                        card.style.display = 'block';
-                        // Add fade-in animation
-                        card.style.animation = 'fadeIn 0.3s ease';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
+    // Set current date in masthead
+    setCurrentDate();
 
     // Smooth Scroll for Anchor Links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -56,14 +29,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add Reading Progress Bar (optional feature for blog posts)
+    // Add Reading Progress Bar (for blog posts)
     if (document.querySelector('.article-content')) {
         createReadingProgressBar();
     }
 
-    // Copy Code Block Functionality (optional)
+    // Copy Code Block Functionality (if code blocks exist)
     addCopyButtonsToCodeBlocks();
+
+    // Search Functionality (for catalog page)
+    if (document.getElementById('searchInput')) {
+        initializeSearch();
+    }
 });
+
+/**
+ * Sets the current date in the masthead
+ */
+function setCurrentDate() {
+    const dateElement = document.getElementById('current-date');
+    if (!dateElement) return;
+
+    const now = new Date();
+    const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+    const months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+
+    const dayName = days[now.getDay()];
+    const monthName = months[now.getMonth()];
+    const day = now.getDate();
+    const year = now.getFullYear();
+
+    // Calculate volume number (years since 2024)
+    const volumeNumber = year - 2024 + 1;
+
+    // Calculate issue number (days in current year)
+    const startOfYear = new Date(year, 0, 1);
+    const diffInMs = now - startOfYear;
+    const issueNumber = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
+
+    const formattedDate = `${dayName}, ${monthName} ${day}, ${year} - VOL. ${volumeNumber} NO. ${issueNumber}`;
+    dateElement.textContent = formattedDate;
+}
 
 /**
  * Creates a reading progress bar at the top of blog posts
@@ -146,29 +152,67 @@ function addCopyButtonsToCodeBlocks() {
 }
 
 /**
- * Simple search functionality (optional - can be enhanced)
+ * Initialize search functionality
  */
 function initializeSearch() {
-    const searchInput = document.getElementById('search-input');
-    const postCards = document.querySelectorAll('.post-card');
+    const searchInput = document.getElementById('searchInput');
+    const postsGrid = document.getElementById('postsGrid');
+    const postCards = Array.from(postsGrid.querySelectorAll('.post-card'));
 
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
 
-            postCards.forEach(card => {
-                const title = card.querySelector('.post-card-title').textContent.toLowerCase();
-                const excerpt = card.querySelector('.post-card-excerpt').textContent.toLowerCase();
-                const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+        postCards.forEach(card => {
+            // Get searchable content from the card
+            const title = card.querySelector('.post-card-title')?.textContent.toLowerCase() || '';
+            const excerpt = card.querySelector('.post-card-excerpt')?.textContent.toLowerCase() || '';
+            const category = card.querySelector('.post-card-category')?.textContent.toLowerCase() || '';
+            const tags = Array.from(card.querySelectorAll('.tag'))
+                .map(tag => tag.textContent.toLowerCase())
+                .join(' ');
 
-                const matches = title.includes(query) ||
-                               excerpt.includes(query) ||
-                               tags.some(tag => tag.includes(query));
+            // Combine all searchable text
+            const searchableText = `${title} ${excerpt} ${category} ${tags}`;
 
-                card.style.display = matches ? 'block' : 'none';
-            });
+            // Show or hide card based on search match
+            if (searchTerm === '' || searchableText.includes(searchTerm)) {
+                card.style.display = '';
+                // Add fade-in animation
+                card.style.animation = 'fadeIn 0.3s ease';
+            } else {
+                card.style.display = 'none';
+            }
         });
-    }
+
+        // Show "no results" message if all cards are hidden
+        const visibleCards = postCards.filter(card => card.style.display !== 'none');
+        let noResultsMsg = document.getElementById('noResultsMessage');
+
+        if (visibleCards.length === 0 && searchTerm !== '') {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.id = 'noResultsMessage';
+                noResultsMsg.style.cssText = `
+                    text-align: center;
+                    padding: 3rem 1rem;
+                    color: var(--color-text-light);
+                    font-size: 1.125rem;
+                `;
+                noResultsMsg.innerHTML = `
+                    <p>No articles found matching "<strong>${searchTerm}</strong>"</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try different keywords or browse all articles below.</p>
+                `;
+                postsGrid.appendChild(noResultsMsg);
+            } else {
+                noResultsMsg.innerHTML = `
+                    <p>No articles found matching "<strong>${searchTerm}</strong>"</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try different keywords or browse all articles below.</p>
+                `;
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
+    });
 }
 
 // Add fade-in animation keyframes dynamically
@@ -186,3 +230,84 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+/* ============================================
+   SOCIAL SHARE FUNCTIONALITY
+   ============================================ */
+
+function openSharePopup() {
+    const popup = document.getElementById('sharePopup');
+    if (popup) {
+        popup.classList.add('active');
+    }
+}
+
+function closeSharePopup() {
+    const popup = document.getElementById('sharePopup');
+    if (popup) {
+        popup.classList.remove('active');
+    }
+    // Hide success message
+    const successMsg = document.getElementById('copySuccess');
+    if (successMsg) {
+        successMsg.style.display = 'none';
+    }
+}
+
+function getShareUrl() {
+    return window.location.href;
+}
+
+function getShareTitle() {
+    return document.title;
+}
+
+function shareOnTwitter() {
+    const url = getShareUrl();
+    const text = getShareTitle();
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+    window.open(twitterUrl, '_blank', 'width=600,height=400');
+}
+
+function shareOnFacebook() {
+    const url = getShareUrl();
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    window.open(facebookUrl, '_blank', 'width=600,height=400');
+}
+
+function shareOnLinkedIn() {
+    const url = getShareUrl();
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    window.open(linkedInUrl, '_blank', 'width=600,height=400');
+}
+
+function shareByEmail() {
+    const url = getShareUrl();
+    const title = getShareTitle();
+    const emailSubject = encodeURIComponent(title);
+    const emailBody = encodeURIComponent(`I thought you might find this interesting: ${url}`);
+    window.location.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+}
+
+function copyLink() {
+    const url = getShareUrl();
+    navigator.clipboard.writeText(url).then(function() {
+        const successMsg = document.getElementById('copySuccess');
+        if (successMsg) {
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 3000);
+        }
+    }).catch(function(err) {
+        console.error('Failed to copy link: ', err);
+        alert('Failed to copy link. Please copy manually: ' + url);
+    });
+}
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSharePopup();
+    }
+});
