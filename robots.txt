@@ -1,0 +1,19 @@
+# robots.txt for blog.thelightroomstudios.com
+# Instructs search engine crawlers on how to crawl and index this blog
+
+User-agent: *
+Allow: /
+
+# Allow all content to be crawled
+Allow: /posts/
+Allow: /assets/
+
+# Disallow any future admin or private directories (if created)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://blog.thelightroomstudios.com/sitemap.xml
+
+# Additional sitemaps can be added here as the blog grows
+# Sitemap: https://blog.thelightroomstudios.com/sitemap-images.xml
