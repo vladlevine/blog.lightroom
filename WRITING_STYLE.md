@@ -1,6 +1,6 @@
 # Vlad Levine's Writing Style & Voice Guidelines
 
-## ⚠️ CRITICAL RULE: NO FABRICATED STATISTICS OR SPECIFIC NUMBERS
+## ⚠️ CRITICAL RULE: NO FABRICATED STATISTICS, NUMBERS, OR PERSONAL FACTS
 
 **THIS IS THE HIGHEST PRIORITY CONTENT RULE - VIOLATION CAN RUIN THE ENTIRE PROJECT**
 
@@ -12,6 +12,14 @@
 - "Studies show that 73% of collectors..."
 - Any specific percentage, count, or data point that is made up
 
+❌ **Fabricated personal facts/biography:**
+- "I've been a photographer for 15 years..."
+- "I studied photography at [University]..."
+- "I won [specific award]..."
+- "I worked with [specific client/company] on..."
+- Any biographical detail, credential, or experience claim that isn't verified true
+- Any specific client names, companies, or identifiable references unless confirmed real
+
 ### What IS Allowed:
 ✅ **Generic, non-specific observations:**
 - "Many galleries struggle with..."
@@ -19,13 +27,17 @@
 - "Most creatives find that..."
 - "Galleries often struggle with..."
 - "Common challenges include..."
+- "From my experience with gallery openings..." (without specific numbers)
+- "Working with clients has shown me..." (without naming specific clients)
 
-**The Rule:** If you're tempted to write a specific number, statistic, or percentage, STOP and rephrase it as a general observation. Specific fabricated data destroys credibility and can have legal/ethical consequences.
+**The Rule:** If you're tempted to write a specific number, statistic, percentage, or personal fact, STOP and rephrase it as a general observation. Specific fabricated data or false biographical claims destroy credibility and can have legal/ethical consequences.
 
 **Examples of Converting Bad → Good:**
 - ❌ "After 150 gallery openings..." → ✅ "From my experience with gallery openings..."
 - ❌ "45% of galleries struggle..." → ✅ "Many galleries struggle..."
 - ❌ "Based on 200 client sessions..." → ✅ "From working with clients..."
+- ❌ "I've been photographing for 12 years..." → ✅ "In my photography work..."
+- ❌ "I worked with MoMA on their 2023 exhibition..." → ✅ "From museum exhibition work..."
 
 ## Core Writing Philosophy
 
