@@ -115,10 +115,27 @@ Avoid lengthy wardrobe guidance unless it's the article's main focus:
 - **DON'T:** Extensive color palettes and styling strategies
 - **DO:** Brief mention in context if relevant, detailed FAQ if needed
 
+### ❌ Excessive Bullet Lists
+Avoid turning articles into endless checklists:
+- **DON'T:** Use 30+ bullet lists throughout an article
+- **DON'T:** List everything—it reads like a checklist, not a story
+- **DON'T:** String together bullets where flowing sentences work better
+- **DO:** Use bullets sparingly for lists of 3-5 concrete items
+- **DO:** Convert most content to flowing, narrative paragraphs
+- **DO:** Ask: "Would someone enjoy reading this, or just scanning it?"
+
 ### Content Structure Rule
 **Main body of text + FAQ section** = Complete article
 
 If it's not essential to the main narrative or can't be concisely answered in FAQ, cut it.
+
+### Blog Post Length Rule
+**Target: 7-10 minute read (2,000-2,500 words)**
+
+- Posts longer than 2,500 words feel overwhelming and get skimmed, not read
+- Posts shorter than 2,000 words may lack depth for SEO
+- Respect the reader's time—they're busy creative professionals
+- If you have 4,000+ words, you probably have two posts worth of content
 
 ## Humor & Personality Integration
 
