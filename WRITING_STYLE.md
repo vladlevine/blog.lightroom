@@ -115,6 +115,22 @@ Avoid lengthy wardrobe guidance unless it's the article's main focus:
 - **DON'T:** Extensive color palettes and styling strategies
 - **DO:** Brief mention in context if relevant, detailed FAQ if needed
 
+### ❌ Fabricated Case Studies or Data
+**CRITICAL:** Never invent case studies, testimonials, or specific data points:
+- **DON'T:** Create fake "Chelsea Gallery increased sales by $185K"
+- **DON'T:** Invent specific ROI numbers, percentages, or client names
+- **DON'T:** Present made-up examples as real case studies
+- **DO:** Use theoretical/hypothetical framing: "If engagement improves from 1.5% to 3%, that's twice the sales for some businesses"
+- **DO:** Discuss possibilities in conversational, analytical way
+- **DO:** Use only data/examples explicitly provided by user
+- **DO:** Make it clear when discussing theoretical scenarios vs. real examples
+
+**Good example:** "Think about it—if better gallery photography improves your website engagement from 1.5% to 3%, you're looking at double the inquiries. For some galleries, that translates directly to double the sales. Even conservative improvements of 20-30% can be significant when you're dealing with high-value artwork."
+
+**Bad example:** "Chelsea Contemporary Gallery saw inquiries increase from 1.2% to 4.1% and revenue grow from $125K to $310K after investing $4,200 in photography."
+
+This is a major issue because fabricated content destroys credibility.
+
 ### ❌ Excessive Bullet Lists
 Avoid turning articles into endless checklists:
 - **DON'T:** Use 30+ bullet lists throughout an article
