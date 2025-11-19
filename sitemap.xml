@@ -10,6 +10,30 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog Post: Headshots vs Portraits in NYC Guide for Creatives -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/headshots-vs-portraits-nyc-guide-creatives.html</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763057045/styled_creative_headshot_marketing_agency.jpg</image:loc>
+      <image:title>Creative headshot example for NYC professionals and creatives</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: How NYC Galleries Use Photography to Drive Online Sales and Engagement -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/nyc-galleries-photography-online-sales-engagement.html</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763546574/Lightroom_32_colorful_painting_crowded_figures_art_abstract_by_Dom_J_from_Pexels_310436_ghskp8.jpg</image:loc>
+      <image:title>Colorful abstract painting in NYC gallery showing art photography for online sales</image:title>
+    </image:image>
+  </url>
+
   <!-- Blog Post: Visual Comparison Standard vs Museum-Grade Art Digitization -->
   <url>
     <loc>https://blog.thelightroomstudios.com/posts/visual-comparison-standard-vs-museum-grade-digitization.html</loc>
