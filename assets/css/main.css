@@ -251,6 +251,7 @@ body.wsj-layout {
 .story-text {
   text-align: left;
   max-width: 845px;
+  margin: 0 auto;
 }
 
 .story-text p {

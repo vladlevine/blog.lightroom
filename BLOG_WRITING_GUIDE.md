@@ -1,6 +1,27 @@
 # The Lightroom Studio - Blog Writing Guide (Static HTML)
 Last Updated: November 2025
 
+## ⚠️ CRITICAL CONTENT RULE: NO FABRICATED STATISTICS
+
+**READ THIS FIRST - VIOLATION CAN RUIN THE ENTIRE PROJECT**
+
+### Never Include Specific Fabricated Numbers:
+- ❌ "After photographing 150 gallery openings..."
+- ❌ "45% of gallery owners struggle..."
+- ❌ "Based on 200+ client sessions..."
+- ❌ Any specific percentage, count, or statistic that is made up
+
+### Always Use Generic Observations Instead:
+- ✅ "Many galleries struggle with..."
+- ✅ "From my experience with gallery openings..."
+- ✅ "Most creatives find that..."
+
+**If you're tempted to write a specific number, STOP and rephrase as a general observation.**
+
+See `WRITING_STYLE.md` for complete anti-fabrication guidelines.
+
+---
+
 ## Critical Workflow: Static HTML Approach
 
 ### Golden Rule

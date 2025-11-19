@@ -1,5 +1,32 @@
 # Vlad Levine's Writing Style & Voice Guidelines
 
+## ⚠️ CRITICAL RULE: NO FABRICATED STATISTICS OR SPECIFIC NUMBERS
+
+**THIS IS THE HIGHEST PRIORITY CONTENT RULE - VIOLATION CAN RUIN THE ENTIRE PROJECT**
+
+### What is NEVER Allowed:
+❌ **Specific fabricated numbers/statistics:**
+- "After photographing 150 gallery openings..."
+- "45% of gallery owners struggle with..."
+- "Based on 200+ client sessions..."
+- "Studies show that 73% of collectors..."
+- Any specific percentage, count, or data point that is made up
+
+### What IS Allowed:
+✅ **Generic, non-specific observations:**
+- "Many galleries struggle with..."
+- "Every other gallery owner I talk to..."
+- "Most creatives find that..."
+- "Galleries often struggle with..."
+- "Common challenges include..."
+
+**The Rule:** If you're tempted to write a specific number, statistic, or percentage, STOP and rephrase it as a general observation. Specific fabricated data destroys credibility and can have legal/ethical consequences.
+
+**Examples of Converting Bad → Good:**
+- ❌ "After 150 gallery openings..." → ✅ "From my experience with gallery openings..."
+- ❌ "45% of galleries struggle..." → ✅ "Many galleries struggle..."
+- ❌ "Based on 200 client sessions..." → ✅ "From working with clients..."
+
 ## Core Writing Philosophy
 
 Prioritize authentic connection over corporate polish. Writing aims to build genuine relationships rather than transactional interactions. Consistently reject overly formal or "salesy" language in favor of conversational, human-centered communication.
