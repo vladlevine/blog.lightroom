@@ -199,8 +199,8 @@ body.wsj-layout {
 
 .main-story {
   border-right: 1px solid var(--color-border-light);
-  padding-left: var(--spacing-lg);
-  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
 }
 
 .main-headline {

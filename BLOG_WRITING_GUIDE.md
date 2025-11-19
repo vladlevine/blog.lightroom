@@ -12,11 +12,12 @@ Last Updated: November 2025
 
 1. **Copy an existing post** from `/posts/` as your template
 2. **Update all meta tags** (title, description, keywords, Open Graph, Schema.org)
-3. **Write content** using semantic HTML5
-4. **Add images** (upload to Cloudinary or `/assets/images/`)
-5. **Add post card** to `index.html` for the blog catalog
-6. **Test locally** by opening files in a browser
-7. **Commit and push** - Netlify auto-deploys (no build needed!)
+3. **Add issue number** (invisible HTML comment + visible footer)
+4. **Write content** using semantic HTML5
+5. **Add images** (upload to Cloudinary or `/assets/images/`)
+6. **Add post card** to `index.html` for the blog catalog
+7. **Test locally** by opening files in a browser
+8. **Commit and push** - Netlify auto-deploys (no build needed!)
 
 ---
 
@@ -61,7 +62,38 @@ git push
 
 ### What to Update in Your New Post
 
-**1. Page Title & Meta Tags (in `<head>`):**
+**1. Issue Number (HIGH PRIORITY - Publication Order Tracking):**
+
+Add two elements to every new blog post:
+
+**Invisible HTML Comment** (for coder reference - after `<html lang="en">`):
+```html
+<!DOCTYPE html>
+<html lang="en">
+<!-- ISSUE_NUMBER: [NEXT_NUMBER] | Publication Order Tracking -->
+<head>
+```
+
+**Visible Issue Number** (magazine-style footer - before JavaScript includes):
+```html
+    <!-- Issue Number -->
+    <div style="text-align: center; margin: 3rem 0 2rem 0; padding-top: 2rem; border-top: 1px solid #E5E7EB;">
+        <p style="font-family: var(--font-sans); font-size: 0.6875rem; color: #999; letter-spacing: 0.1em; text-transform: uppercase;">Issue No. [NEXT_NUMBER]</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
+```
+
+**How to determine NEXT_NUMBER:**
+- Check most recent post in `/posts/` directory
+- Look for `<!-- ISSUE_NUMBER: X -->` comment
+- Your new post = X + 1
+- Current latest: Issue No. 8 (as of Nov 2025)
+
+**2. Page Title & Meta Tags (in `<head>`):**
 
 ```html
 <title>Your Post Title | The Lightroom Studio</title>
@@ -373,6 +405,7 @@ See `WRITING_STYLE.md` for comprehensive voice guidelines. Key principles:
 
 Before publishing:
 
+- [ ] **Issue number added** (invisible comment + visible footer)
 - [ ] All meta tags updated
 - [ ] Schema.org JSON-LD correct
 - [ ] Images optimized and loading
