@@ -505,3 +505,182 @@ If blog grows beyond 20 posts, consider automated sitemap generation.
 
 **Document maintained by:** The Lightroom Studio
 **Next review date:** February 19, 2026
+
+---
+
+## Sitemap Submission Guide
+
+### Before Submission
+
+- [ ] Merge feature branch to main
+- [ ] Wait for Netlify to deploy (check dashboard - usually 30-60 seconds)
+- [ ] Verify sitemap is live: https://blog.thelightroomstudios.com/sitemap.xml
+  - You should see XML code listing all blog posts
+  - If you get 404, wait longer for deployment
+
+### Google Search Console Submission
+
+**First Time Setup:**
+
+1. Go to https://search.google.com/search-console
+2. Click "Add Property" → Select "URL prefix"
+3. Enter: \`https://blog.thelightroomstudios.com\` (subdomain, NOT main domain)
+4. Verify ownership:
+   - **Method 1 (HTML File):** Download verification file → add to repo → commit/push → deploy → verify
+   - **Method 2 (Meta Tag):** Copy meta tag → add to index.html \`<head>\` → commit/push → deploy → verify
+
+**Submit Sitemap:**
+
+- [ ] In Search Console, click "Sitemaps" (left menu)
+- [ ] In "Add a new sitemap" field, enter: \`sitemap.xml\`
+- [ ] Click "Submit"
+- [ ] Verify status shows "Success" and URL count
+
+**Important:** Blog subdomain (\`blog.thelightroomstudios.com\`) must be added as a **separate property** in Search Console. Subdomains are treated separately from root domains.
+
+### Bing Webmaster Tools Submission
+
+**Easy Option (Recommended):**
+- Click "Import from Google Search Console"
+- Authorize Bing → select blog subdomain → import done!
+
+**Manual Option:**
+- Add site → verify ownership → submit sitemap URL
+
+### Troubleshooting
+
+**"Sitemap could not be read"**
+- Verify file exists at URL
+- Check Netlify deploy logs
+- Wait 5 minutes and retry
+
+**"404 Not Found" when visiting sitemap.xml**
+- Netlify hasn't deployed yet
+- Check deployment status
+- Ensure branch merged to main
+
+### Ongoing Maintenance
+
+**Every new blog post:**
+1. Update sitemap.xml with new post URL and lastmod date
+2. Commit and push
+3. No need to resubmit - Google automatically recrawls sitemaps every few days
+
+**Verification:**
+- Within 24-48 hours: Check "Coverage" report for indexing status
+- Within 1-2 weeks: Test with \`site:blog.thelightroomstudios.com\` in Google
+
+---
+
+## Blog → Main Website Relationship
+
+### Visual Architecture
+
+\`\`\`
+┌─────────────────────────────────────────────────────┐
+│         thelightroomstudios.com (ROOT DOMAIN)       │
+└─────────────────────────────────────────────────────┘
+                          │
+         ┌────────────────┴────────────────┐
+         │                                 │
+         ▼                                 ▼
+┌────────────────────┐          ┌────────────────────┐
+│   MAIN WEBSITE     │          │   BLOG SUBDOMAIN   │
+│                    │          │                    │
+│ thelightroomstu... │◄─────────│ blog.thelightroom  │
+│                    │  LINKS   │      studios.com   │
+│  - Services        │          │                    │
+│  - Contact         │          │  - How-to guides   │
+│  - Portfolio       │          │  - Comparisons     │
+│  - About           │          │  - Best practices  │
+└────────────────────┘          └────────────────────┘
+         │                                 │
+   CONVERSIONS                      TRAFFIC & AUTHORITY
+   (customers)                       (education)
+\`\`\`
+
+### How Authority Flows
+
+\`\`\`
+External Websites (art blogs, galleries)
+         │
+         │ Backlinks earned by quality content
+         ▼
+┌────────────────────┐
+│  BLOG SUBDOMAIN    │  ← Ranks for informational keywords
+│                    │  ← Earns backlinks
+└────────────────────┘  ← Builds topical authority
+         │
+         │ 5-7 internal links per post
+         │ (passes authority)
+         ▼
+┌────────────────────┐
+│   MAIN WEBSITE     │  ← Receives authority from blog
+│                    │  ← Ranks higher for commercial keywords
+└────────────────────┘  ← Converts visitors to customers
+
+Result: BOTH sites rank higher!
+\`\`\`
+
+### Customer Journey
+
+**Stage 1: Awareness (Top of Funnel)**
+\`\`\`
+User searches: "how to document art exhibition"
+         ↓
+Google shows: blog.thelightroomstudios.com/posts/...
+         ↓
+User reads comprehensive guide (builds trust)
+\`\`\`
+
+**Stage 2: Interest (Middle of Funnel)**
+\`\`\`
+User sees CTA in blog post
+         ↓
+Clicks link to main website services
+         ↓
+Lands on: thelightroomstudios.com/services/[service]
+\`\`\`
+
+**Stage 3: Action (Bottom of Funnel)**
+\`\`\`
+User reviews services
+         ↓
+Clicks "Request a Quote" or calls
+         ↓
+CONVERSION! New customer acquired
+\`\`\`
+
+### Keyword Strategy (Non-Contradictory)
+
+**Blog Targets:** Informational keywords
+- "how to document art exhibition"
+- "standard vs museum art photo"
+- "guide to art digitization"
+
+**Main Website Targets:** Commercial keywords
+- "NYC art photography services"
+- "hire art photographer NYC"
+- "professional art digitization"
+
+**NO OVERLAP = NO CONTRADICTION**
+
+Both sites rank for different keywords, then blog funnels to main site!
+
+### Why This Helps Main Website
+
+1. **More Referral Traffic** - Blog sends qualified visitors
+2. **Higher Domain Authority** - Blog backlinks boost root domain
+3. **Better Conversion Rate** - Pre-educated, qualified leads
+4. **More Keyword Coverage** - Dominate entire search funnel
+
+**Common Concerns:**
+
+❓ "Will blog compete with main website?"
+**NO!** Different keywords (informational vs. commercial)
+
+❓ "Will blog dilute main site's authority?"
+**NO!** Authority flows FROM blog TO main via internal links
+
+❓ "Should blog be subfolder instead of subdomain?"
+**Either works!** Current setup is fine. Quality content + internal linking matters most.

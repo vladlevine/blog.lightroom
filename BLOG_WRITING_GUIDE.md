@@ -312,6 +312,63 @@ Edit `/assets/js/main.js` for interactive features.
 
 ---
 
+## Content Guidelines & Writing Style
+
+### ⚠️ CRITICAL: What NOT to Include
+
+**Avoid Excessive Detail Sections** that distract from the main narrative:
+
+❌ **NO: Detailed Pricing Tiers**
+```html
+<!-- DON'T include exhaustive pricing breakdowns -->
+<h3>Budget Tier ($150-300):</h3>
+<ul>
+  <li>Basic session (20-30 minutes)</li>
+  <li>3-5 final edited images</li>
+  <li>Basic retouching included</li>
+</ul>
+```
+
+❌ **NO: Unnecessary Preparation Lists**
+```html
+<!-- DON'T include granular lifestyle advice -->
+<li>Stay hydrated leading up to session</li>
+<li>Avoid alcohol day before (causes puffiness)</li>
+<li>Get adequate sleep night before</li>
+```
+
+❌ **NO: Over-Detailed Wardrobe Sections**
+```html
+<!-- DON'T include extensive styling guides -->
+<h3>What to Wear: For Men</h3>
+<h3>What to Wear: For Women</h3>
+<h3>Grooming and Styling</h3>
+```
+
+### ✅ Content Structure Rule
+
+**Main body of text + FAQ section = Complete article**
+
+If it's not essential to the main narrative or can't be concisely answered in FAQ, cut it.
+
+### Writing Voice
+
+See `WRITING_STYLE.md` for comprehensive voice guidelines. Key principles:
+
+- **Conversational & authentic** - avoid corporate jargon
+- **Brief & respectful** - value reader's time
+- **Warm deadpan humor** - relatable industry observations
+- **Genuine over salesy** - build connection, not transactions
+- **Story-driven** - use specific examples, not generic claims
+
+### Blog Post Goals (Priority Order)
+
+1. **SEO** - Rank for target keywords, drive organic traffic
+2. **Natural, Human Feel** - Authentic images and copy, not corporate
+3. **Entertaining & Easy** - Readable, engaging, respects time
+
+---
+
 ## Quality Checklist
 
 Before publishing:
@@ -324,6 +381,8 @@ Before publishing:
 - [ ] Tested locally in browser
 - [ ] Content proofread
 - [ ] SEO keywords included naturally
+- [ ] **No excessive pricing/preparation sections**
+- [ ] **Follows WRITING_STYLE.md voice guidelines**
 - [ ] Ready to push to GitHub
 
 ---
