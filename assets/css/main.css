@@ -200,7 +200,7 @@ body.wsj-layout {
 .main-story {
   border-right: 1px solid var(--color-border-light);
   padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-xl);
+  padding-right: calc(var(--spacing-xl) + var(--spacing-xl));
 }
 
 .main-headline {
