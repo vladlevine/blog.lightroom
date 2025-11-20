@@ -1093,9 +1093,15 @@ body.wsj-article-page {
     gap: var(--spacing-xl);
   }
 
-  .whats-news-section,
-  .main-story {
+  /* Hide ads/studio features on mobile */
+  .whats-news-section {
+    display: none;
+  }
+
+  .main-story,
+  .side-stories {
     border-right: none;
+    padding-left: 0;
     padding-right: 0;
     margin-bottom: var(--spacing-xl);
   }
