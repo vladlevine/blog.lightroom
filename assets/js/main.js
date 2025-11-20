@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         createReadingProgressBar();
     }
 
+    // Initialize Sticky Header on Scroll Up (for blog posts)
+    if (document.querySelector('.wsj-article-page')) {
+        initializeStickyHeaderOnScrollUp();
+    }
+
     // Copy Code Block Functionality (if code blocks exist)
     addCopyButtonsToCodeBlocks();
 
@@ -96,6 +101,46 @@ function createReadingProgressBar() {
         const progress = (scrolled / documentHeight) * 100;
 
         progressBar.style.width = progress + '%';
+    });
+}
+
+/**
+ * Sticky Header on Scroll Up
+ * Shows header as fixed when scrolling up, hides when scrolling down
+ */
+function initializeStickyHeaderOnScrollUp() {
+    const header = document.querySelector('.wsj-masthead');
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const scrollThreshold = 200; // Only activate after scrolling down 200px
+
+    function updateHeader() {
+        const currentScrollY = window.scrollY;
+
+        // Only show sticky header if we've scrolled past threshold
+        if (currentScrollY < scrollThreshold) {
+            header.classList.remove('sticky-header');
+        }
+        // Scrolling up
+        else if (currentScrollY < lastScrollY) {
+            header.classList.add('sticky-header');
+        }
+        // Scrolling down
+        else {
+            header.classList.remove('sticky-header');
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
     });
 }
 
