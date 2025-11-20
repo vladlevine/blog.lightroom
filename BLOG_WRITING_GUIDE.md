@@ -37,10 +37,10 @@ See `WRITING_STYLE.md` for complete anti-fabrication guidelines.
 
 1. **Copy an existing post** from `/posts/` as your template
 2. **Update all meta tags** (title, description, keywords, Open Graph, Schema.org)
-3. **Add issue number** (invisible HTML comment + visible footer)
+3. **Add issue number** (invisible HTML comment + visible footer + masthead)
 4. **Write content** using semantic HTML5
 5. **Add images** (upload to Cloudinary or `/assets/images/`)
-6. **Add post card** to `index.html` for the blog catalog
+6. **Add post to RIGHT COLUMN** in `index.html` (scrollable article list at top)
 7. **Test locally** by opening files in a browser
 8. **Commit and push** - Netlify auto-deploys (no build needed!)
 
@@ -204,40 +204,34 @@ Write inside `<div class="article-content">` using HTML:
 </div>
 ```
 
-**6. Add to index.html:**
+**6. Add to index.html RIGHT COLUMN (CRITICAL - REQUIRED FOR EVERY POST):**
 
-Add your post to the blog catalog:
+**IMPORTANT:** Every new post MUST be added to the scrollable article list in the right column of `index.html` at the TOP (newest first).
+
+Add your post to the right column article list (inside `.articles-scroll-container`):
 
 ```html
-<article class="post-card" data-category="Photography">
-    <a href="posts/your-new-post.html">
-        <img src="https://hero-image.jpg" alt="Description" class="post-card-image" loading="lazy">
+<!-- Article 1 (NEWEST) - Add your new post here at the top -->
+<article class="article-list-item">
+    <a href="posts/your-new-post.html" class="article-list-link">
+        <img src="https://your-hero-image.jpg" alt="Your Post Title" class="article-list-thumb">
+        <div class="article-list-content">
+            <h4 class="article-list-title">Your Full Post Title</h4>
+            <p class="article-list-meta">November 20, 2025 • 8 min read</p>
+        </div>
     </a>
-
-    <div class="post-card-content">
-        <span class="post-card-category">Photography</span>
-
-        <h2 class="post-card-title">
-            <a href="posts/your-new-post.html">Your Post Title</a>
-        </h2>
-
-        <p class="post-card-excerpt">
-            Brief excerpt (100-150 chars)...
-        </p>
-
-        <div class="post-card-meta">
-            <div class="post-card-date">
-                <time datetime="2025-11-16">Nov 16, 2025</time>
-            </div>
-            <span class="post-card-readtime">10 min read</span>
-        </div>
-
-        <div class="post-card-tags">
-            <span class="tag">tag1</span>
-        </div>
-    </div>
 </article>
+
+<div class="divider-thin"></div>
+
+<!-- Previous posts follow below... -->
 ```
+
+**Location in index.html:**
+- Find the right column: `<aside class="side-stories scrollable-articles">`
+- Find the container: `<div class="articles-scroll-container">`
+- Add your new article at the **very top** (before all existing articles)
+- This ensures newest posts appear first in reverse chronological order
 
 ---
 
@@ -430,16 +424,16 @@ See `WRITING_STYLE.md` for comprehensive voice guidelines. Key principles:
 
 Before publishing:
 
-- [ ] **Issue number added** (invisible comment + visible footer)
+- [ ] **Issue number added** (invisible comment + visible footer + masthead)
 - [ ] All meta tags updated
 - [ ] Schema.org JSON-LD correct
 - [ ] Images optimized and loading
 - [ ] Links tested
-- [ ] Post card added to index.html
+- [ ] **Post added to RIGHT COLUMN in index.html** (top of scrollable article list)
 - [ ] Tested locally in browser
 - [ ] Content proofread
 - [ ] SEO keywords included naturally
-- [ ] **No excessive pricing/preparation sections**
+- [ ] **No fabricated statistics or personal facts**
 - [ ] **Follows WRITING_STYLE.md voice guidelines**
 - [ ] Ready to push to GitHub
 
