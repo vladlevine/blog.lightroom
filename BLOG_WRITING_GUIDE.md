@@ -87,6 +87,18 @@ git push
 
 ### What to Update in Your New Post
 
+**AUTOMATIC FEATURES (No Action Required):**
+
+All blog posts automatically include these features via `main.js`:
+- ✅ **Sticky Header on Scroll Up**: When users scroll down past 200px and then scroll back up, the masthead appears as a floating sticky header for easy navigation
+- ✅ **Reading Progress Bar**: Thin progress bar at top of page shows reading progress
+- ✅ **Smooth Scroll**: Anchor links smoothly scroll to sections
+- ✅ **Share Functionality**: Social media sharing buttons work automatically
+
+These features activate automatically on any page with `class="wsj-layout wsj-article-page"` on the `<body>` tag (which is in all blog post templates).
+
+---
+
 **1. Issue Number (HIGH PRIORITY - Publication Order Tracking):**
 
 Add two elements to every new blog post:
