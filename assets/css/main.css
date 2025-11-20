@@ -122,6 +122,25 @@ body.wsj-layout {
   margin-top: var(--spacing-sm);
 }
 
+/* Sticky Header on Scroll Up */
+.wsj-masthead.sticky-header {
+  position: fixed;
+  top: -300px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-bg);
+  margin-bottom: 0;
+  animation: slideDown 0.3s ease-out forwards;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+  to {
+    top: 0;
+  }
+}
+
 /* ============================================
    THREE-COLUMN NEWSPAPER GRID
    ============================================ */
@@ -199,8 +218,8 @@ body.wsj-layout {
 
 .main-story {
   border-right: 1px solid var(--color-border-light);
-  padding-left: var(--spacing-lg);
-  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-xl);
+  padding-right: calc(var(--spacing-xl) + var(--spacing-xl));
 }
 
 .main-headline {
@@ -251,6 +270,7 @@ body.wsj-layout {
 .story-text {
   text-align: left;
   max-width: 845px;
+  margin: 0 auto;
 }
 
 .story-text p {

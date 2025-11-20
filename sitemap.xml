@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Blog Post: Headshots vs Portraits in NYC Guide for Creatives -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/headshots-vs-portraits-nyc-guide-creatives.html</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763057045/styled_creative_headshot_marketing_agency.jpg</image:loc>
+      <image:title>Creative headshot example for NYC professionals and creatives</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: How NYC Galleries Use Photography to Drive Online Sales and Engagement -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/nyc-galleries-photography-online-sales-engagement.html</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763546574/Lightroom_32_colorful_painting_crowded_figures_art_abstract_by_Dom_J_from_Pexels_310436_ghskp8.jpg</image:loc>
+      <image:title>Colorful abstract painting in NYC gallery showing art photography for online sales</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: Visual Comparison Standard vs Museum-Grade Art Digitization -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/visual-comparison-standard-vs-museum-grade-digitization.html</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763546471/Lightroom_1_abstract_painting_light_grey_textured_wall_art_minimal_by_Sabina_Kallari_from_Pexels_33960000_hvjay7.jpg</image:loc>
+      <image:title>Abstract textured painting demonstrating art digitization quality differences</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: Documenting Art Exhibition Guide -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/documenting-art-exhibition-guide.html</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763346429/photo_by_Matheus_Viana_vertical%20photo%20of%20an%20art%20gallery%20with%20one%20person%20looking%20at%20art%20work%20_%20pexels-prismattco-2372982_u0d6u3.jpg</image:loc>
+      <image:title>Art gallery visitor contemplating artwork in professional exhibition space</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: Social Media Gallery Opening Content -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/social-media-gallery-opening-content.html</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763338439/5._Image_by_StockSnap_from_Pixabay_man_art_gallery_looking%20at%20painting%20-2590655_1280_jmvpro.jpg</image:loc>
+      <image:title>Gallery opening social media content creation</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: Mixed Media Art NYC Documentation -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/mixed-media-art-nyc-documentation.html</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763335557/3._magazine-806073_1280_Image_by_kconcha_from_Pixabay_wp8ppk.jpg</image:loc>
+      <image:title>Mixed media art documentation in NYC galleries</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Post: Art Photography & Digitization Guide -->
+  <url>
+    <loc>https://blog.thelightroomstudios.com/posts/art-photography-digitization-guide.html</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtuxu64zp/image/upload/v1763334879/background-brush_strokes_Kseniya_Lapteva_xfamth.jpg</image:loc>
+      <image:title>Art photography and digitization guide for professional documentation</image:title>
+    </image:image>
+  </url>
+
+</urlset>
