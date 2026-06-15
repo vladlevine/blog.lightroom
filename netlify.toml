@@ -47,8 +47,134 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Redirect rules (optional)
-# [[redirects]]
-#   from = "/old-path"
-#   to = "/new-path"
-#   status = 301
+# =============================================================================
+# 301 Permanent Redirects — Blog Migration to Main Site
+# Deployed 2025-12-25 | All 17 articles + homepage
+# Keep active indefinitely per Google migration guidance
+# =============================================================================
+
+# Homepage
+[[redirects]]
+  from = "/"
+  to = "https://thelightroomstudios.com/blog"
+  status = 301
+  force = true
+
+# Article: Headshots vs Portraits
+[[redirects]]
+  from = "/posts/headshots-vs-portraits-nyc-guide-creatives.html"
+  to = "https://thelightroomstudios.com/post/headshots-vs-portraits-nyc-guide-creatives"
+  status = 301
+  force = true
+
+# Article: NYC Galleries Photography
+[[redirects]]
+  from = "/posts/nyc-galleries-photography-online-sales-engagement.html"
+  to = "https://thelightroomstudios.com/post/nyc-galleries-photography-online-sales-engagement"
+  status = 301
+  force = true
+
+# Article: Visual Comparison Digitization
+[[redirects]]
+  from = "/posts/visual-comparison-standard-vs-museum-grade-digitization.html"
+  to = "https://thelightroomstudios.com/post/visual-comparison-standard-vs-museum-grade-digitization"
+  status = 301
+  force = true
+
+# Article: Documenting Art Exhibition
+[[redirects]]
+  from = "/posts/documenting-art-exhibition-guide.html"
+  to = "https://thelightroomstudios.com/post/documenting-art-exhibition-guide"
+  status = 301
+  force = true
+
+# Article: Social Media Gallery Opening
+[[redirects]]
+  from = "/posts/social-media-gallery-opening-content.html"
+  to = "https://thelightroomstudios.com/post/social-media-gallery-opening-content"
+  status = 301
+  force = true
+
+# Article: Mixed Media Art NYC
+[[redirects]]
+  from = "/posts/mixed-media-art-nyc-documentation.html"
+  to = "https://thelightroomstudios.com/post/mixed-media-art-nyc-documentation"
+  status = 301
+  force = true
+
+# Article: Art Photography Digitization Guide
+[[redirects]]
+  from = "/posts/art-photography-digitization-guide.html"
+  to = "https://thelightroomstudios.com/post/art-photography-digitization-guide"
+  status = 301
+  force = true
+
+# Article: Architectural Office Photography
+[[redirects]]
+  from = "/posts/architectural-office-photography-branded-corporate-space.html"
+  to = "https://thelightroomstudios.com/post/architectural-office-photography-branded-corporate-space"
+  status = 301
+  force = true
+
+# Article: Artist Studio Photography
+[[redirects]]
+  from = "/posts/artist-studio-photography-tell-your-story.html"
+  to = "https://thelightroomstudios.com/post/artist-studio-photography-tell-your-story"
+  status = 301
+  force = true
+
+# Article: Branding Photography NYC Therapists
+[[redirects]]
+  from = "/posts/branding-photography-nyc-therapists-approachable-image.html"
+  to = "https://thelightroomstudios.com/post/branding-photography-nyc-therapists-approachable-image"
+  status = 301
+  force = true
+
+# Article: Document Art Collection
+[[redirects]]
+  from = "/posts/document-art-collection-insurance-archives-legacy.html"
+  to = "https://thelightroomstudios.com/post/document-art-collection-insurance-archives-legacy"
+  status = 301
+  force = true
+
+# Article: Film Artistic Process
+[[redirects]]
+  from = "/posts/film-artistic-process-without-stifling-creativity.html"
+  to = "https://thelightroomstudios.com/post/film-artistic-process-without-stifling-creativity"
+  status = 301
+  force = true
+
+# Article: Gallery Opening Photography
+[[redirects]]
+  from = "/posts/gallery-opening-photography-capture-energy.html"
+  to = "https://thelightroomstudios.com/post/gallery-opening-photography-capture-energy"
+  status = 301
+  force = true
+
+# Article: Hiring Event Photographer NYC
+[[redirects]]
+  from = "/posts/hiring-professional-event-photographer-nyc-expectations.html"
+  to = "https://thelightroomstudios.com/post/hiring-professional-event-photographer-nyc-expectations"
+  status = 301
+  force = true
+
+# Article: Lighting Techniques Texture
+[[redirects]]
+  from = "/posts/lighting-techniques-texture-paintings-sculptures.html"
+  to = "https://thelightroomstudios.com/post/lighting-techniques-texture-paintings-sculptures"
+  status = 301
+  force = true
+
+# Article: Photography Curating Museum Exhibition Online
+[[redirects]]
+  from = "/posts/photography-curating-museum-exhibition-online.html"
+  to = "https://thelightroomstudios.com/post/photography-curating-museum-exhibition-online"
+  status = 301
+  force = true
+
+# Article: Small Business Branding Photography
+[[redirects]]
+  from = "/posts/small-business-professional-branding-photography.html"
+  to = "https://thelightroomstudios.com/post/small-business-professional-branding-photography"
+  status = 301
+  force = true
